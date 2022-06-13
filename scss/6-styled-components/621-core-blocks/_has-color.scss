@@ -1,0 +1,68 @@
+/**
+ * Colors applied in block editor
+ */
+
+:root {
+    /* background solid colors */
+    .has-agk-tekstkleur-background-color {
+        background-color: var(--paragraph-color);
+    }
+    .has-wit-background-color {
+        background-color: var(--white);
+    }
+    .has-agk-lichtgeel-background-color {
+        background-color: var(--agk-bg);
+        border: 2px solid var(--agk-geel-achtergrond)
+    }
+    .has-agk-geel-tekst-background-color {
+        background-color: var(--agk-geel-tekst);
+    }
+    .has-agk-rood-background-color {
+        background-color: var(--agk-rood);
+    }
+    .has-agk-blauw-background-color {
+        background-color: var(--agk-blauw);
+    }
+    .has-agk-groen-background-color {
+        background-color: var(--agk-groen);
+    }
+    .has-agk-licht-groen-background-color {
+        background-color: var(--agk-licht-groen);
+    }
+    .has-agk-geel-achtergrond-background-color {
+        background-color: var(--agk-geel-achtergrond);
+    }
+    /* spot solid colors */
+    .has-agk-tekstkleur-color {
+        color: var(--paragraph-color);
+    }
+    .has-wit-color {
+        color: var(--white);
+    }
+    .has-agk-geel-tekst-color {
+        color: var(--agk-geel-tekst);
+    }
+    .has-agk-rood-color {
+        color: var(--agk-rood);
+    }
+    .has-agk-blauw-color {
+        color: var(--agk-blauw);
+    }
+    .has-agk-groen-color {
+        color: var(--agk-groen);
+    }
+    .has-agk-licht-groen-color {
+        color: var(--agk-licht-groen);
+    }
+    .has-agk-geel-achtergrond-color {
+        color: var(--agk-geel-achtergrond);
+    }
+    /* gradients */
+    /* .has-fanagalo-gradient-background {
+        background: linear-gradient(100deg, var(--fngl-dark-blue) 0%, var(--fngl-light-blue) 17%, var(--fngl-purple) 33%, var(--fngl-magenta) 50%, var(--fngl-dark-red) 67%, var(--fngl-red) 83%, var(--fngl-yellow) 100%);
+    } */
+}
+
+:root .has-link-color a {
+    color: var(--a-color, #00e);
+}

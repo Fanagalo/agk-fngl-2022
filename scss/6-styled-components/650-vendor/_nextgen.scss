@@ -1,0 +1,84 @@
+/**
+* Custom CSS for plugin 
+* NextGEN Gallery, plugin by Imagely, version 3.11
+* https://wordpress.org/plugins/nextgen-gallery/
+*/
+
+/* short code to display available albums on page
+* example: [ngg src="albums" ids="4" display="basic_extended_album" gallery_display_type="photocrati-nextgen_basic_slideshow" 
+*       galleries_per_page="2" display_view="default-view.php" enable_descriptions="1" thumbnail_crop="0"]
+*/
+
+.ngg-albumoverview.default-view {
+  .ngg-album {
+    @include article-width;
+    padding: 1rem;
+    border: 2px solid var(--agk-geel-achtergrond);
+  }
+
+  .ngg-albumcontent {
+    background-color: transparent;
+  }
+
+  .ngg-thumbnail {
+    margin-right: 1rem;
+
+    img {
+      border: 1px solid var(--grey-lighter);
+
+      &:hover {
+        box-shadow: 0 0 10px 0 var(--agk-geel-achtergrond);
+      }
+    }
+  }
+
+  .ngg-albumtitle {
+    @include heading-styling;
+    font-size: var(--fs-l);
+    text-transform: none;
+    clear: none;
+
+    a {
+      text-decoration: none;
+      color: var(--agk-rood);
+    }
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+/*
+* opened album as contact sheet on page
+*/
+
+// breadcrumb
+.article-content {
+  ul.ngg-breadcrumbs {
+    // <ul>
+    @include alignwide;
+    border-top: 2px solid var(--agk-geel-achtergrond);
+    background-color: var(--agk-bg);
+    padding: 0.5rem 1rem;
+    font-style: italic;
+  }
+
+  .ngg-breadcrumb {
+    // <li>
+    text-transform: none;
+  }
+}
+
+// slide show overview
+
+.slideshowlink {
+  //  @include alignwide;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  width: 100% !important;
+  max-width: var(--max-width-container) !important;
+  border-bottom: 2px solid var(--agk-geel-achtergrond);
+  background-color: var(--agk-bg);
+  padding: 1rem 1rem 0.5rem;
+}

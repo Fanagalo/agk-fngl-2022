@@ -1,0 +1,11 @@
+/**
+ * Custom CSS for plugin 
+ * Donation Thermometer, plugin by Henry Patton, version 2.0.10
+ * https://nl.wordpress.org/plugins/donation-thermometer/
+ */
+
+// custom class made with wp-block-group pattern
+.agk-thermometer svg {
+    @include article-width;
+    float: none !important;
+}

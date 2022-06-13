@@ -1,0 +1,11 @@
+/* make publication date invisible for
+ * - ledenagenda
+ * - thermometer
+ */
+
+#post-2130,
+#post-2117 {
+    .article-meta {
+        display: none;
+    }
+}

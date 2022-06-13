@@ -1,0 +1,30 @@
+/* 
+ * Custom CSS for plugin AGK-Custom by Marco van Rijn
+ * version 1.11
+*/
+
+/*
+ * login form is WordPress function wp_login_form()
+ * @source: https://developer.wordpress.org/reference/functions/wp_login_form/
+ */
+
+#loginform {
+  @include article-width;
+  border: 2px var(--agk-geel-tekst) solid;
+  padding: 1rem;
+  margin-bottom: 1.75rem;
+  label {
+    font-family: var(--ff-sans);
+    display: block;
+    &::after {
+      margin-left: 0.5rem;
+      content: "verplicht veld";
+      font-size: var(--fs-xs);
+      font-style: italic;
+      color: var(--agk-rood);
+    }
+  }
+  .login-submit {
+    margin-bottom: 0;
+  }
+}

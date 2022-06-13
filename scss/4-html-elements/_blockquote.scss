@@ -1,0 +1,23 @@
+cite {
+    color: var(--paragraph-color);
+}
+
+blockquote {
+    @include article-width;
+    text-align: center;
+    font-style: italic;
+    padding: 1rem 0;
+    border-top: 2px solid var(--agk-geel-achtergrond);
+    border-bottom: 2px solid var(--agk-geel-achtergrond);
+    margin-bottom: 1.75rem;
+    p {
+        font-size: var(--fs-m) !important;
+        line-height: 1.7 !important;
+    }
+    p:last-of-type {
+        margin-bottom: 0;
+    }
+    cite {
+        display: block;
+    }
+}

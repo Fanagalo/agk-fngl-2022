@@ -1,0 +1,14 @@
+table {
+    margin: 0 0 var(--whiteline);
+    width: 100%;
+    border-bottom: 1px solid var(--grey-lighter);
+}
+
+td,
+th {
+    padding: 0.5em 1em;
+}
+
+td {
+    border-top: 1px solid var(--grey-lighter);
+}

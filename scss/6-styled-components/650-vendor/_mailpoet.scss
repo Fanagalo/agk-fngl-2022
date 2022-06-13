@@ -1,0 +1,13 @@
+/**
+ * Custom CSS for plugin 
+ * MailPoet, plugin by MailPoet, version 3.62.1
+ * https://nl.wordpress.org/plugins/mailpoet/
+ */
+
+// subscription widget
+.widget_mailpoet_form {
+    input[type="email"] {
+        border-radius: 0;
+        width: 100%;
+    }
+}

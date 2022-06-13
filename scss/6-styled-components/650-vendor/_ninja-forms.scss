@@ -1,0 +1,9 @@
+/**
+ * Custom CSS for plugin 
+ * Ninja Forms, plugin by Saturday Drive, version 3.5.4
+ * https://nl.wordpress.org/plugins/ninja-forms/
+ */
+
+.nf-form-cont {
+  @include article-width;
+}

@@ -1,0 +1,36 @@
+/* 
+ * Custom CSS for plugin 
+ * Cookie Notice & Compliance for GDPR / CCPA, by Hu-manity.co, version 2.0.4
+ * https://wordpress.org/plugins/cookie-notice/
+ */
+
+#cookie-notice {
+    background-color: var(--agk-rood) !important;
+    box-shadow: 0 0 100px 0 var(--black);
+}
+
+.cn-text-container {
+    @include paragraph-styling;
+    color: var(--white);
+}
+
+.cn-close-icon,
+#cn-close-notice {
+    display: none;
+}
+
+.cn-button {
+    background-color: var(--grey-darker) !important;
+    border-radius: 0 !important;
+    font-family: var(--ff-sans) !important;
+    font-size: var(--fs-s) !important;
+    font-weight: var(--fw-sub) !important;
+    text-transform: uppercase !important;
+    padding: 0.3rem 0.5rem;
+}
+#cn-accept-cookie,
+#cn-refuse-cookie,
+#cn-more-info {
+    color: var(--white);
+    text-decoration: none;
+}

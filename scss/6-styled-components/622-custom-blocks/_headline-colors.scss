@@ -1,0 +1,53 @@
+/*
+* Applies a coloring to headlines with a specific tag
+*/
+
+.tag-koptekst-blauw {
+    .article-title,
+    .article-title a {
+        color: var(--agk-blauw);
+    }
+}
+
+.tag-koptekst-geel {
+    .article-title,
+    .article-title a {
+        color: var(--agk-geel-tekst);
+    }
+}
+
+.tag-koptekst-groen {
+    .article-title,
+    .article-title a {
+        color: var(--agk-groen);
+    }
+}
+
+.tag-koptekst-zwart {
+    .article-title,
+    .article-title a {
+        color: var(--heading-color);
+    }
+}
+
+.tag-koptekst-rood,
+.tag-rood {
+    .article-title,
+    .article-title a {
+        color: var(--agk-rood);
+    }
+}
+
+
+/*
+.tag-koptekst-blauw,
+.tag-koptekst-geel,
+.tag-koptekst-groen,
+.tag-koptekst-zwart,
+.tag-koptekst-rood,
+.tag-rood {
+    .article-title a:hover {
+        opacity: 75%;
+    }
+}
+*/

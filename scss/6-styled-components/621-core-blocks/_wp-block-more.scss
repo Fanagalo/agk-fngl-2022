@@ -1,0 +1,15 @@
+/* the more block CSS source is obscure */
+
+/* for backend */
+.wp-block-more input {
+    font-family: var(--ff-sans);
+    text-transform: none;
+}
+
+/* for frontend */
+.more-link {
+    display: block;
+    margin-bottom: var(--whiteline);
+    text-align: right;
+    font-style: italic;
+}

@@ -1,0 +1,112 @@
+/**
+ * Colums block
+ *
+ * @checked with version WordPress 5.7
+ */
+
+.wp-block-columns {
+    display: flex;
+    margin-bottom: 1.75em;
+    flex-wrap: wrap;
+}
+
+@media (min-width: $mq-medium) {
+    .wp-block-columns {
+        flex-wrap: nowrap;
+    }
+}
+
+.wp-block-columns.has-background {
+    padding: var(--has-background-padding);
+}
+
+.wp-block-columns.are-vertically-aligned-top {
+    align-items: flex-start;
+}
+
+.wp-block-columns.are-vertically-aligned-center {
+    align-items: center;
+}
+
+.wp-block-columns.are-vertically-aligned-bottom {
+    align-items: flex-end;
+}
+
+.wp-block-column {
+    flex-grow: 1;
+    min-width: 0;
+    word-break: break-word;
+    overflow-wrap: break-word;
+}
+
+/* column contents set to width of 100% */
+
+.wp-block-column {
+    .article-title,
+    .article-meta,
+    .article-footer {
+        max-width: 100%;
+    }
+    p.article-content >,
+    p.article-content >,
+    ul.article-content >,
+    ol.article-content >,
+    dl.article-content >,
+    h1.article-content >,
+    h2.article-content >,
+    h3.article-content >,
+    h4.article-content >,
+    h5.article-content >,
+    h6.article-content >,
+    figure.article-content >,
+    figcaption.article-content > {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: calc($mq-small - $mq-reduction)) {
+    .wp-block-column {
+        flex-basis: 100% !important;
+    }
+}
+@media (min-width: $mq-small) and (max-width: calc($mq-medium - $mq-reduction)) {
+    .wp-block-column:not(:only-child) {
+        flex-basis: calc(50% - 1em) !important;
+        flex-grow: 0;
+    }
+    .wp-block-column:nth-child(2n) {
+        margin-left: 1rem;
+    }
+}
+
+@media (min-width: $mq-medium) {
+    .wp-block-column {
+        flex-basis: 0;
+        flex-grow: 1;
+    }
+    .wp-block-column[style*="flex-basis"] {
+        flex-grow: 0;
+    }
+    .wp-block-column:not(:first-child) {
+        margin-left: 1rem;
+    }
+}
+
+.wp-block-column.is-vertically-aligned-top {
+    align-self: flex-start;
+}
+
+.wp-block-column.is-vertically-aligned-center {
+    -ms-grid-row-align: center;
+    align-self: center;
+}
+
+.wp-block-column.is-vertically-aligned-bottom {
+    align-self: flex-end;
+}
+
+.wp-block-column.is-vertically-aligned-bottom,
+.wp-block-column.is-vertically-aligned-center,
+.wp-block-column.is-vertically-aligned-top {
+    width: 100%;
+}

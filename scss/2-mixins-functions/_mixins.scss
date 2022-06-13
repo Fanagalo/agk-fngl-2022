@@ -1,0 +1,67 @@
+@mixin paragraph-styling {
+    font-family: var(--ff-serif);
+    font-weight: var(--fw-regular);
+    font-size: var(--fs-paragraph);
+    line-height: var(--lh-paragraph);
+    color: var(--paragraph-color);
+    margin-top: 0;
+    margin-bottom: var(--lh-paragraph);
+}
+
+@mixin title-styling {
+    font-family: var(--ff-serif);
+    font-weight: var(--fw-bold);
+    font-style: italic;
+    font-size: var(--fs-title);
+    line-height: var(--lh-xl);
+    color: var(--heading-color);
+    clear: both;
+    word-break: break-word;
+}
+
+@mixin heading-styling {
+    font-family: var(--ff-serif);
+    font-weight: var(--fw-bold);
+    font-style: italic;
+    color: var(--heading-color);
+    clear: both;
+    word-break: break-word;
+}
+
+@mixin alignwide {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    max-width: var(--max-width-container);
+}
+
+@mixin article-width {
+    width: 100%;
+    max-width: var(--max-width-text);
+    margin-left: auto;
+    margin-right: auto;
+    @media screen and (min-width: $mq-small) {
+        &.alignwide, &.alignfull {
+            @include alignwide
+        }
+    }
+}
+
+@mixin small-button {
+    font-size: var(--fs-xxs);
+    font-weight: var(--fw-sub);
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 50px;
+    padding: 2px .5rem 2px .5rem;
+    line-height: var(--lh-xxs);
+}
+
+@mixin svg-icon ($css-variable, $width, $height) {
+    content: "";
+    display: inline-block;
+    width: $width;
+    height: $height;
+    background: no-repeat left var($css-variable);
+    background-size: cover;
+}

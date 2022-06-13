@@ -1,0 +1,14 @@
+/**
+ * Custom CSS for plugin 
+ * WP Private Content Plus, plugin by Rakhitha Nimesh, version 3.02
+ * https://nl.wordpress.org/plugins/wp-private-content-plus/
+ */
+
+.wppcp-attachments-display-panel {
+    margin-bottom: var(--whiteline);
+    // @include article-width;
+}
+
+.alignfull .wppcp-attachments-display-panel-file img {
+    width: auto;
+}

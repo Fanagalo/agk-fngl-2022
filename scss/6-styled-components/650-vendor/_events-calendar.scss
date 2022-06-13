@@ -1,0 +1,99 @@
+/**
+ * Custom CSS for plugins:
+ * 
+ * The Events Calendar, plugin by The Events Calendar, version 5.7.0
+ * https://nl.wordpress.org/plugins/the-events-calendar/
+ *
+ * The Events Calendar PRO, plugin by The Events Calendar, version 5.7.0
+ * https://theeventscalendar.com/products/wordpress-events-calendar/
+ *
+ * The Events Calendar Shortcode & Block, by Event Calendar Newsletter, version 5.7.2
+ * https://nl.wordpress.org/plugins/the-events-calendar-shortcode/
+ *
+ */
+
+/* list overview of events history */
+.ecs-event-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.ecs-event {
+    margin-bottom: 2rem;
+    padding: 1rem;
+    border-top: 2px solid var(--agk-geel-achtergrond);
+    background-color: var(--agk-bg);
+    h4 {
+        margin: 0;
+        font-size: var(--fs-l);
+        a {
+            color: var(--agk-rood);
+            text-decoration: none;
+            &hover {
+                text-decoration: underline;
+            }
+        }
+    }
+    img {
+        display: block;
+        border: solid 1px var(--grey-lightest);
+        margin: 1rem 0 0;
+    }
+}
+
+/* event details
+ * URL starting with "event/"
+ */
+
+.tribe-events-notices {
+    background-color: var(--agk-blauw);
+    border: 0;
+    border-radius: 0;
+    li {
+        text-shadow: none;
+        font-family: var(--ff-sans);
+        color: var(--white);
+    }
+}
+
+#tribe-events {
+    padding: 0;
+    @include article-width;
+    .tribe-events-button {
+        background-color: var(--agk-blauw);
+    }
+    a {
+        text-decoration: underline;
+    }
+}
+.single-tribe_events {
+    .tribe-events-event-meta {
+        background-color: var(--grey-lightest);
+    }
+
+    // this links are not useful
+    .tribe-events-back,
+    #tribe-events-footer,
+    .tribe-events-nav-pagination,
+    tribe-events-event-categories-label,
+    tribe-events-event-categories {
+        display: none;
+    }
+}
+
+/* dedicated layout for page "Ledenagenda" on "Leden Home" */
+#post-2130 {
+    .tribe-events-widget-link {
+        display: none;
+    }
+}
+
+/* dedicated layout for page "Ledenagenda" */
+.page-id-2132 {
+    .tribe-events-title-bar,
+    .tribe-events-header,
+    .tribe-events-nav-pagination {
+        display: none;
+    }
+}

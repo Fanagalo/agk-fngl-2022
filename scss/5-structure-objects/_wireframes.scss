@@ -1,0 +1,194 @@
+:root {
+    /* header */
+    --header-full-bg: var(--agk-bg);
+    --header-area-bg: var(--agk-bg);
+    /* menu */
+    --nav-full-bg: var(--agk-bg);
+    --nav-area-bg: var(--white);
+    /* main content */
+    --main-full-bg: var(--agk-bg);
+    --main-area-bg: var(
+        --white
+    ); // leave as is for editor.css, change value in _colors.scss
+    /* sidebar */
+    --sidebar-full-bg: var(--agk-rood);
+    --sidebar-area-bg: var(--agk-rood);
+    /* footer */
+    --footer-full-bg: var(--agk-rood);
+    --footer-area-bg: var(--agk-rood);
+    /* width of left and right margin for template images */
+    --agk-lrimw: 1.5rem; // min-value 1.125rem = 18px
+}
+
+body {
+    width: 100vw;
+    min-height: 100vh;
+    display: grid;
+    // grid-template-areas: " . header   . " " . nav      . " " . main     . " " . aside    . " " . footer   . ";
+    grid-template-areas: " . header-left header-center header-right . " " . nav-left nav-center nav-right . " " . main-left main-center main-right . " " . aside-left aside-3c-center aside-right . " " . aside-left aside-fw-center aside-right . " " . footer-left footer-center footer-right . ";
+    grid-template-columns: 1rem var(--agk-lrimw) auto var(--agk-lrimw) 1rem;
+    grid-template-rows: auto auto 1fr auto auto;
+}
+
+@media screen and (min-width: $mq-large) {
+    body {
+        width: 100%;
+        grid-template-columns:
+            auto var(--agk-lrimw) var(--max-width-container) var(--agk-lrimw)
+            auto;
+    }
+}
+
+/* full width backgrounds */
+
+.header-full-bg,
+.nav-full-bg,
+.breadcrumb-full-bg,
+.main-full-bg,
+.sidebar-3col-full-bg,
+.sidebar-fw-full-bg,
+.footer-full-bg {
+    grid-column: 1 / -1;
+    z-index: -1;
+}
+
+/* header */
+
+.header-full-bg {
+    grid-row: 1 / 2;
+    background: var(--header-full-bg);
+}
+
+.header-left-bg {
+    grid-area: header-left;
+}
+
+.header-right-bg {
+    grid-area: header-right;
+}
+
+.header-area {
+    grid-area: header-center;
+    background: var(--header-area-bg);
+}
+
+/* navigation / menu */
+
+.nav-full-bg {
+    grid-row: 2 / 3;
+    background: var(--nav-full-bg);
+}
+
+.nav-left-bg {
+    grid-area: nav-left;
+    background: url(images/menu-li-bo.png) top left no-repeat,
+        url(images/menu-li-mi.png) top left repeat-y var(--nav-area-bg);
+}
+
+.nav-right-bg {
+    grid-area: nav-right;
+    background: url(images/menu-re-bo.png) top right no-repeat,
+        url(images/menu-re-mi.png) top right repeat-y var(--nav-area-bg);
+}
+
+.nav-area {
+    grid-area: nav-center;
+    background: url(images/menu-mi-bo.png) top center repeat-x,
+        url(images/menu-mi-mi.png) top center repeat var(--nav-area-bg);
+}
+
+/* main */
+
+.main-full-bg {
+    grid-row: 3 / 4;
+    background: var(--main-full-bg);
+}
+
+.main-left-bg {
+    grid-area: main-left;
+    background: url(images/content-li.png) left repeat-y var(--main-area-bg);
+}
+
+.main-right-bg {
+    grid-area: main-right;
+    background: url(images/content-re.png) right repeat-y var(--main-area-bg);
+}
+
+.main-area {
+    grid-area: main-center;
+    background: var(--main-area-bg);
+}
+
+/* sidebar 3 columns */
+
+.sidebar-3col-full-bg {
+    grid-row: 4 / 5;
+    background: var(--sidebar-full-bg);
+}
+
+.sidebar-3col-left-bg {
+    grid-area: aside-left;
+    background: url(images/sidebar-li.png) left repeat-y var(--sidebar-area-bg);
+}
+
+.sidebar-3col-right-bg {
+    grid-area: aside-right;
+    background: url(images/sidebar-re.png) right repeat-y var(--sidebar-area-bg);
+}
+
+.sidebar-3col-area {
+    grid-area: aside-3c-center;
+    background: var(--sidebar-area-bg);
+}
+
+/* sidebar full width */
+
+.sidebar-fw-full-bg {
+    grid-row: 5 / 6;
+    background: var(--sidebar-full-bg);
+}
+
+.sidebar-fw-left-bg {
+    grid-area: aside-left;
+    background: url(images/sidebar-li.png) left repeat-y var(--sidebar-area-bg);
+}
+
+.sidebar-fw-right-bg {
+    grid-area: aside-right;
+    background: url(images/sidebar-re.png) right repeat-y var(--sidebar-area-bg);
+}
+
+.sidebar-fw-area {
+    grid-area: aside-fw-center;
+    background: var(--sidebar-area-bg);
+}
+
+/* footer */
+
+.footer-left-bg,
+.footer-right-bg,
+footer {
+    margin-bottom: 2rem;
+}
+
+.footer-full-bg {
+    grid-row: 6 / 7;
+    background: var(--footer-full-bg);
+}
+
+.footer-left-bg {
+    grid-area: footer-left;
+    background: url(images/footer-li.png) bottom left no-repeat,
+        url(images/sidebar-3col-li.png) left repeat-y var(--footer-area-bg);
+}
+
+.footer-right-bg {
+    grid-area: footer-right;
+    background: url(images/footer-re.png) bottom right no-repeat,
+        url(images/sidebar-3col-re.png) right repeat-y var(--footer-area-bg);
+}
+
+.footer-area {
+    grid-area: footer-center;
+    background: url(images/footer-bg.png) bottom repeat-x var(--footer-area-bg);
+}

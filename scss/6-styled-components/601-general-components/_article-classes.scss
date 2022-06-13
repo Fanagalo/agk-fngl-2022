@@ -1,0 +1,147 @@
+.main-area {
+    padding: 0;
+}
+
+.sticky {
+    display: block;
+}
+
+.article {
+    margin: 0 0 1.5em;
+}
+
+.updated:not(.published) {
+    display: none;
+}
+
+.page-links {
+    clear: both;
+    margin: 0 0 1.5em;
+}
+
+.comment-content a {
+    word-wrap: break-word;
+}
+
+.bypostauthor {
+    display: block;
+}
+
+.article-header {
+    // margin-top: 1rem;
+    margin-bottom: 1.75rem;
+}
+
+.article-title {
+    margin-top: 1rem;
+    margin-bottom: 0;
+    @include article-width;
+    @include title-styling;
+}
+
+.has-background article:first-of-type .article-title {
+    margin-top: 0;
+}
+
+.article-title a {
+    color: var(--agk-rood);
+    text-decoration: none;
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+/* meta sections */
+
+.article-categories,
+.article-meta {
+    @include article-width;
+    font-size: var(--fs-s);
+    font-weight: var(--fw-light);
+    text-transform: uppercase;
+}
+
+.article-categories {
+    margin-bottom: 0.5rem;
+    a {
+        background-color: var(--agk-licht-groen);
+        color: var(--p-color);
+        display: inline;
+        margin-right: 0.25rem;
+        padding: 0.25rem 0.5rem 0.125rem;
+        text-decoration: none;
+        &:hover {
+            background-color: var(--agk-groen);
+            color: var(--diap-color);
+        }
+    }
+}
+
+.article-post-date {
+    color: var(--grey-dark);
+}
+
+.article-tags a {
+    @include small-button;
+    background-color: var(--grey-lightest);
+    color: var(--paragraph-color);
+    margin-left: 0.5rem;
+    &:hover {
+        background-color: var(--grey-light);
+        color: var(--diap-color);
+    }
+}
+
+.post-thumbnail {
+    display: block;
+    @include article-width;
+}
+
+/* typography article elements 
+ * default sans serif
+ */
+
+.article-content {
+    p,
+    ul,
+    ol,
+    dl {
+        @include paragraph-styling;
+    }
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        @include heading-styling;
+    }
+}
+
+/* limit width of article elements */
+
+.article-content > {
+    p,
+    ul,
+    ol,
+    dl,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    figure,
+    figcaption {
+        @include article-width;
+    }
+}
+
+.article-footer {
+    @include article-width;
+}
+
+article:not(:last-child) footer {
+    border-bottom: 1px solid var(--grey-lighter);
+    mix-blend-mode: multiply;
+    margin-bottom: var(--whiteline);
+}

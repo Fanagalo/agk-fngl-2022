@@ -1,0 +1,39 @@
+:root {
+    --widget-bg: transparent;
+    --widget-text-color: var(--white);
+}
+
+.widget {
+    background-color: var(--widget-bg);
+    // border: var(--primary-lighter) 1px solid;
+    // padding: 1rem;
+    * {
+        color: var(--widget-text-color);
+        line-height: var(--lh-s);
+        margin: 0;
+    }
+    p {
+        // margin: 0.875rem 0;
+    }
+    a {
+        color: var(--white);
+    }
+    select {
+        max-width: 100%;
+    }
+    ol,
+    ul {
+        margin-left: 0;
+        padding-left: 1rem;
+    }
+}
+
+.widgettitle, // keep this, typo in WP_Widget_Recent_Posts
+.widget-title {
+    font-family: var(--ff-sans);
+    font-size: var(--fs-paragraph);
+    text-transform: uppercase;
+    font-style: normal;
+    color: var(--white);
+    margin: 1rem 0 1rem 0;
+}

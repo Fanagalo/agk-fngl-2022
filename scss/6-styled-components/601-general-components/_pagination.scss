@@ -1,0 +1,46 @@
+:root {
+    --pagination-background-color: transparent;
+}
+
+.nav-links {
+    background-color: var(--pagination-background-color);
+    border-top: 1px solid var(--primary-color);
+    border-bottom: 1px solid var(--primary-color);
+    display: grid;
+    grid-template-columns: auto auto;
+    margin-bottom: 1rem;
+    @include alignwide;
+}
+
+.nav-previous,
+.nav-next {
+    background-color: var(--pagination-background-color);
+    padding: 1rem 18px;
+    line-height: var(--lh-xs);
+    align-self: center;
+}
+
+.nav-previous {
+    grid-column: 1/2;
+}
+
+.nav-next {
+    grid-column: 2/3;
+    text-align: right;
+}
+
+.nav-links a {
+    text-decoration: none;
+}
+
+.nav-previous a::before {
+    @include svg-icon(--arrow-left, 18px, 18px);
+    margin-left: -18px;
+    margin-bottom: -.25rem;
+}
+
+.nav-next a::after {
+    @include svg-icon(--arrow-right, 18px, 18px);
+    margin-right: -18px;
+    margin-bottom: -.25rem;
+}

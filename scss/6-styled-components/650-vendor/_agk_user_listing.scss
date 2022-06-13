@@ -1,0 +1,11 @@
+/**
+ * Custom CSS for plugin 
+ * AGK User Listing, plugin by Marco van Rijn, version 1.0
+ */
+
+#sul-searchform {
+    @include article-width;
+    label {
+        display: block;
+    }
+}
