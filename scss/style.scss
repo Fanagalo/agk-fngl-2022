@@ -4,7 +4,7 @@
  Author: Jaap Wiering - Fanagalo
  Author URI: https://fanagalo.nl
  Description: Custom theme for Het Amsterdams Gemengd Koor, based op fngl_s-core 0.78 
- Version: 2.1
+ Version: 2.11
  License: GNU General Public License v2 or later
  Text Domain: agk-fngl-2022
  /* 
@@ -195,7 +195,8 @@ in functions.php
 @import "6-styled-components/650-vendor/agk_custom_mvr";
 @import "6-styled-components/650-vendor/agk_user_listing";
 @import "6-styled-components/650-vendor/cookie-notice-hu-manity";
-@import "6-styled-components/650-vendor/events-calendar";
+// @import "6-styled-components/650-vendor/events-calendar";
+@import "6-styled-components/650-vendor/events-manager";
 // @import "6-styled-components/650-vendor/gutenslider";
 @import "6-styled-components/650-vendor/mailpoet";
 @import "6-styled-components/650-vendor/nextgen";

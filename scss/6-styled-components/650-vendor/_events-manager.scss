@@ -1,0 +1,206 @@
+/**
+ * Custom CSS for plugins:
+ * 
+ * Events Manager, plugin by Marcus Sykes, version 6.0.1
+ * https://nl.wordpress.org/plugins/events-manager/
+ *
+ * PRINCIPLES
+ * - short codes [events_list] and [events_list_grouped]
+ * - default pattern as set in backend settings
+ * - all elements with prefix "fngl-em-" 
+ *
+ * TABLE OF CONTENTS
+ * 1. Events lists
+ *    a. general code
+ *    b. pages "concerten", "concerthistorie"
+ *    c. homepage
+ * 2. Event single
+ *
+ */
+
+/* 1. Events list */
+
+/* 1a. general code */
+
+/* overcomes extra <p> tags by block editor */
+.fngl-em-event p:empty,
+.fngl-em-event + p {
+    display: none;
+}
+
+.fngl-em-event-list {
+    a {
+        display: block;
+        text-decoration: none;
+        font-family: var(--ff-serif);
+    }
+    .fngl-em-event {
+        border-top: 2px solid var(--agk-geel-achtergrond);
+        margin: 0 auto 2rem;
+        padding: 1rem;
+        background-color: var(--agk-bg);
+        max-width: var(--max-width-text);
+        &:hover {
+            background-color: var(--agk-geel-achtergrond);
+        }
+    }
+    .fngl-em-date,
+    .fngl-em-location {
+        color: var(--paragraph-color);
+        line-height: var(--lh-s);
+    }
+    h3 {
+        margin: 0.25rem 0;
+        line-height: 2rem;
+    }
+
+    a.readmore {
+        @include small-button;
+        display: inline-block;
+        font-family: var(--ff-sans);
+        background-color: var(--grey-middle);
+        color: var(--white);
+        padding-top: 3px;
+        &:hover {
+            background-color: var(--grey-darker);
+        }
+    }
+}
+
+/* 1b. pages "concerten", "concerthistorie"
+
+example of shortcode, slightly altered versions on different pages
+<div class="fngl-em-event-list">[events_list limit="15" category="concert"]<a href="#_EVENTURL">
+<div class="fngl-em-event">
+<div class="fngl-em-date">#_EVENTDATES · #_EVENTTIMES</div>
+<h3>#_EVENTNAME</h3>
+<div class="fngl-em-location">#_LOCATIONNAME</div>
+<div><a class="readmore" href="#_EVENTURL">meer informatie</a></div>
+</div>
+</a>[/events_list]</div>
+
+*/
+
+/* 1c. homepage
+
+example of shortcode, altered versions on different pages
+<div class="fngl-em-event-list">[events_list limit="3" category="concert"]<a href="#_EVENTURL">
+<div class="fngl-em-event-list">[events_list]<a href="#_EVENTURL">
+<div class="fngl-em-event">
+<div class="fngl-em-date">#_EVENTDATES<br>#_EVENTTIMES</div>
+<h3>#_EVENTNAME</h3>
+<div class="fngl-em-location">#_LOCATIONNAME</div>
+<div><a class="readmore" href="#_EVENTURL">meer informatie</a></div>
+</div>
+</a>[/events_list]</div>
+
+*/
+
+.home .fngl-em-event-list {
+    .fngl-em-event {
+        background-color: var(--agk-bg);
+        &:hover {
+            background-color: var(--primary-lightest);
+        }
+    }
+}
+
+/* 2. Event single 
+
+- used on page with single event
+
+example of shortcode
+
+<section class="em-item-header">
+	{has_image}
+	<div class="em-item-image {no_image}has-placeholder{/no_image}">
+		#_EVENTIMAGE{medium}
+	</div>
+	{/has_image}
+
+	<div class="fngl-em-item-meta">
+		<div class="em-item-meta-line em-event-date em-event-meta-datetime">
+			<div class="em-icon-calendar em-icon"></div>
+			<div>#_EVENTDATES</div>
+		</div>
+		<div class="em-item-meta-line em-event-time em-event-meta-datetime">
+			<div class="em-icon-clock em-icon"></div>
+			<div>#_EVENTTIMES</div>
+		</div>
+		{has_location_venue}
+		<div class="em-item-meta-line em-event-location">
+			<div class="em-icon-location em-icon"></div>
+			<div>
+				<strong>#_LOCATIONNAME</strong><br>
+				#_LOCATIONADDRESS<br>
+				#_LOCATIONPOSTCODE  #_LOCATIONTOWN
+			</div>
+		</div>
+		{/has_location_venue}
+
+
+		{has_event_location}
+		<div class="em-item-meta-line em-event-location">
+			<span class="em-icon-at em-icon"></span>
+			#_EVENTLOCATION
+		</div>
+		{/has_event_location}
+	</div>
+</section>
+
+<section class="fngl-em-event-content">
+	#_EVENTNOTES
+</section>
+
+*/
+
+// hide post thumbnail on top of page
+
+.event {
+    .post-thumbnail {
+        display: none;
+    }
+    .article-content {
+        margin: 0 auto;
+        max-width: var(--max-width-text);
+    }
+}
+
+// override plugin CSS
+
+.em.em-item.em-item-single.size-medium .em-item-header .em-item-image img,
+.em.em-item.em-item-single.size-small .em-item-header .em-item-image img {
+    border-bottom: none;
+}
+
+// meta block
+
+.fngl-em-item-meta {
+    padding: 1rem 0;
+    font-family: var(--ff-sans);
+    color: var(--paragraph-color);
+    line-height: var(--lh-paragraph);
+    border-top: var(--agk-geel-achtergrond) solid 2px;
+    border-bottom: var(--agk-geel-achtergrond) solid 2px;
+    .em-item-meta-line {
+        display: flex;
+        gap: 10px;
+        margin: 0.5rem 0;
+        .em-icon {
+            margin-top: 4px;
+        }
+    }
+}
+
+.em.pixelbones .fngl-em-event-content {
+    blockquote,
+    dl,
+    figure,
+    ol,
+    p,
+    pre,
+    table,
+    ul {
+        line-height: var(--lh-paragraph) !important;
+    }
+}

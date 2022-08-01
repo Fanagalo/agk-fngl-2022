@@ -9,9 +9,6 @@
  * @package Fanagalo_underscores_core
  */
 
-
-
-
 ?>
 
 	<div class="footer-full-bg"></div>
