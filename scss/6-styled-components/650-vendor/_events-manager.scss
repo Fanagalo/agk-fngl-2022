@@ -54,6 +54,10 @@
         line-height: 2rem;
     }
 
+    .fngl-em-featured-image {
+        margin: 1rem 0;
+    }
+
     a.readmore {
         @include small-button;
         display: inline-block;
@@ -75,6 +79,16 @@ example of shortcode, slightly altered versions on different pages
 <div class="fngl-em-date">#_EVENTDATES · #_EVENTTIMES</div>
 <h3>#_EVENTNAME</h3>
 <div class="fngl-em-location">#_LOCATIONNAME</div>
+<div><a class="readmore" href="#_EVENTURL">meer informatie</a></div>
+</div>
+</a>[/events_list]</div>
+
+concerthistory
+<div class="fngl-em-event-list">[events_list limit="99" category="concert" scope="past" orderby=event_start_date order=DESC pagination=0]<a href="#_EVENTURL">
+<div class="fngl-em-event">
+<div class="fngl-em-date">#_{j} #_{F} #_{Y} · #_24HSTARTTIME</div>
+<h3>#_EVENTNAME</h3>
+<div class="fngl-em-location">#_LOCATIONNAME</div>{has_image}<div class="fngl-em-featured-image">#_EVENTIMAGE{200,0}</div>{/has_image}
 <div><a class="readmore" href="#_EVENTURL">meer informatie</a></div>
 </div>
 </a>[/events_list]</div>
