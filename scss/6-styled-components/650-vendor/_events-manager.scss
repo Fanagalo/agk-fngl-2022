@@ -46,6 +46,7 @@
     }
     .fngl-em-date,
     .fngl-em-location {
+        font-family: var(--ff-sans);
         color: var(--paragraph-color);
         line-height: var(--lh-s);
     }
