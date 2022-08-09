@@ -18,6 +18,9 @@
             color: var(--paragraph-color);
         }
     }
+    .post-thumbnail {
+        max-width: var(--max-width-container);
+    }
     .article-content > {
         p,
         ul,

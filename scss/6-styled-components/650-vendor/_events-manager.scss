@@ -43,6 +43,9 @@
         &:hover {
             background-color: var(--agk-geel-achtergrond);
         }
+        &:last-of-type {
+            margin-bottom: 1rem;
+        }
     }
     .fngl-em-date,
     .fngl-em-location {
