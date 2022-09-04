@@ -7,12 +7,12 @@
 .wp-block-columns {
     display: flex;
     margin-bottom: 1.75em;
-    flex-wrap: wrap;
+    flex-wrap: wrap !important;
 }
 
 @media (min-width: $mq-medium) {
     .wp-block-columns {
-        flex-wrap: nowrap;
+        flex-wrap: nowrap !important;
     }
 }
 
