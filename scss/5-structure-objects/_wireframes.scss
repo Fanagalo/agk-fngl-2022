@@ -178,14 +178,12 @@ footer {
 
 .footer-left-bg {
     grid-area: footer-left;
-    background: url(images/footer-li.png) bottom left no-repeat,
-        url(images/sidebar-3col-li.png) left repeat-y var(--footer-area-bg);
+    background: url(images/footer-li.png) bottom left no-repeat;
 }
 
 .footer-right-bg {
     grid-area: footer-right;
-    background: url(images/footer-re.png) bottom right no-repeat,
-        url(images/sidebar-3col-re.png) right repeat-y var(--footer-area-bg);
+    background: url(images/footer-re.png) bottom right no-repeat;
 }
 
 .footer-area {

@@ -7,12 +7,12 @@
 .wp-block-columns {
     display: flex;
     margin-bottom: 1.75em;
-    flex-wrap: wrap !important;
+    flex-wrap: wrap !important; // overrules block editor CSS that is inserted on page
 }
 
 @media (min-width: $mq-medium) {
     .wp-block-columns {
-        flex-wrap: nowrap !important;
+        flex-wrap: nowrap !important; // overrules block editor CSS that is inserted on page
     }
 }
 
