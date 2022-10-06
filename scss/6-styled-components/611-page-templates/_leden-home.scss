@@ -11,7 +11,9 @@
 }
 
 /* smaller heading in right column */
-.ledenhome-rechterkolom h2.article-title a {
-    font-size: var(--fs-xl);
+.ledenhome-rechterkolom h2.article-title {
     line-height: var(--lh-paragraph);
+    a {
+        font-size: var(--fs-xl);
+    }
 }
