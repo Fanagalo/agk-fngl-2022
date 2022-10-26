@@ -10,10 +10,17 @@
     }
 }
 
-/* smaller heading in right column */
-.ledenhome-rechterkolom h2.article-title {
-    line-height: var(--lh-paragraph);
-    a {
-        font-size: var(--fs-xl);
+// makes headings smaller is one-third column
+
+.wp-block-column[style="flex-basis:33.33%"] {
+    .article-content h2 {
+        line-height: var(--lh-paragraph);
+        font-size: var(--fs-l);
+    }
+    h2.article-title {
+        line-height: var(--lh-paragraph);
+        a {
+            font-size: var(--fs-xl);
+        }
     }
 }

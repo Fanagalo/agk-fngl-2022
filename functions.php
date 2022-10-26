@@ -157,3 +157,10 @@ require get_template_directory() . '/inc/fngl-recent-posts-shortcode.php';  // S
 if (defined('JETPACK__VERSION')) {
 	require get_template_directory() . '/inc/jetpack.php';  // Load Jetpack compatibility file.
 }
+
+/* Change excerpt length */
+
+// function mytheme_custom_excerpt_length( $length ) {
+//     return 1;
+// }
+// add_filter( 'excerpt_length', 'mytheme_custom_excerpt_length', 999 );

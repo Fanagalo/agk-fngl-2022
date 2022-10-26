@@ -9,30 +9,48 @@
  */
 ?>
 
-<article class="archive-post">
-    <?php
-    // if(has_post_thumbnail()) {
-    echo '<div class="archive-post-image">';
-    echo '<a href=' .  esc_url(get_permalink()) . ' rel="bookmark">';
-    the_post_thumbnail('medium');
-    echo '</a>';
-    echo '</div><!-- archive-post-image -->';
-    // }
+<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-    echo '<div class="archive-post-text">';
+	<?php agk_fngl_2022_post_thumbnail(); ?>
 
-    the_category('');
+	<header class="article-header">
 
-    echo '<a href=' .  esc_url(get_permalink()) . ' rel="bookmark"><h2  class="archive-post-title">' . get_the_title() . '</h2></a>';
+		<?php
+		the_title('<h2 class="article-title"><a href="' . esc_url(get_permalink()) . '" rel="bookmark">', '</a></h2>');
+		?>
+			<div class="article-meta">
+				<?php
+				/* alternative to the_date(); prints dates, also if previous article has same date */
+				$article_date = get_the_date();
+				echo '<span class="post-date">' . $article_date . '</span>';
+				?>
+			</div><!-- .article-meta -->
 
-    the_date('', '<div class="article-post-date">', '</div>');
+        </header><!-- .article-header -->
 
-    echo '<a href=' .  esc_url(get_permalink()) . ' rel="bookmark" class="archive-post-excerpt">';
-    the_excerpt();
-    '</a>';
+	<div class="article-content">
+		<?php
+            the_excerpt();
 
-    echo '<a href=' .  esc_url(get_permalink()) . ' rel="bookmark" class="archive-post-readmore">' . __('Lees verder', 'eiklinde-fngl-2020') . '</a>';
+        // the_content(sprintf(
+		// 	wp_kses(
+		// 		/* translators: %s: Name of current post. Only visible to screen readers */
+		// 		__('Continue reading<span class="screen-reader-text"> "%s"</span>', 'agk-fngl-2022'),
+		// 		array(
+		// 			'span' => array(
+		// 				'class' => array(),
+		// 			),
+		// 		)
+		// 	),
+		// 	get_the_title()
+		// ));
 
-    echo '</div><!-- archive-post-text -->';
-    ?>
-</article><!-- .archive-post -->
+		// wp_link_pages(array(
+		// 	'before' => '<div class="page-links">' . esc_html__('Pages:', 'agk-fngl-2022'),
+		// 	'after'  => '</div>',
+		// ));
+		?>
+	</div><!-- .article-content -->
+
+
+</article>
