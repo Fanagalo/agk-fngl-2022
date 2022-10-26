@@ -146,17 +146,18 @@ function agk_fngl_2022_scripts()
 add_action('wp_enqueue_scripts', 'agk_fngl_2022_scripts');
 
 /* Add functions from directory "inc" */
-require get_template_directory() . '/inc/template-tags.php';                // Custom template tags for this theme.
-require get_template_directory() . '/inc/template-functions.php';           // Functions which enhance the theme by hooking into WordPress.
-require get_template_directory() . '/inc/custom-header.php';                // Custom Header
-require get_template_directory() . '/inc/customizer.php';                   // Customizer
+require get_template_directory() . '/inc/comments-disable.php';         // Custom styling of the frontend and backend of the block editor 
 require get_template_directory() . '/inc/custom-block-styling.php';         // Custom styling of the frontend and backend of the block editor 
 require get_template_directory() . '/inc/custom-color-font-blocks.php';     // Custom colors and font sizes for block editor
+require get_template_directory() . '/inc/custom-header.php';                // Custom Header
+require get_template_directory() . '/inc/customizer.php';                   // Customizer
 require get_template_directory() . '/inc/fngl-recent-posts-shortcode.php';  // Shortcode to display overview of pages, posts of CPT using a shortcode
+require get_template_directory() . '/inc/template-functions.php';           // Functions which enhance the theme by hooking into WordPress.
+require get_template_directory() . '/inc/template-tags.php';                // Custom template tags for this theme.
 
-if (defined('JETPACK__VERSION')) {
-	require get_template_directory() . '/inc/jetpack.php';  // Load Jetpack compatibility file.
-}
+// if (defined('JETPACK__VERSION')) {
+// 	require get_template_directory() . '/inc/jetpack.php';  // Load Jetpack compatibility file.
+// }
 
 /* Change excerpt length */
 
