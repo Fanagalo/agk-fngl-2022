@@ -4,6 +4,11 @@
     --archive-post-hover-shadow: 0 0 12px var(--eiklinde-paars);
 }
 
+.archive-overview article {
+    @include article-width;
+    border-top: var(--archive-post-border);
+}
+
 .archive-post {
     margin-bottom: 2rem;
     border: var(--archive-post-border);
