@@ -32,7 +32,7 @@
         </header><!-- .article-header -->
 
 	<div class="article-content">
-		<?php echo '<p>' . wpse_custom_excerpts(55). '</p>'; ?>
+		<?php echo '<p>' . wpse_custom_excerpts(45). '</p>'; ?>
 	</div><!-- .article-content -->
 
 

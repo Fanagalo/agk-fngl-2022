@@ -8,6 +8,31 @@
     margin: 0;
 }
 
+.archive {
+    .page-header h1 {
+        font-family: var(--ff-sans);
+        font-weight: var(--fw-light);
+        font-style: normal;
+        font-size: var(--fs-xl);
+        color: var(--p-color);
+        span {
+            text-transform: uppercase;
+            padding: 0.25rem 0.5rem 0.125rem;
+            background-color: var(--agk-licht-groen);
+            color: var(--p-color);
+        }
+    }
+}
+
+// .article-categories {
+//     margin-bottom: 0.5rem;
+//     a {
+//         background-color: var(--agk-licht-groen);
+//         color: var(--p-color);
+//         display: inline;
+//         margin-right: 0.25rem;
+//         text-decoration: none;
+
 /*
 .archive-description {
     @include article-width;
