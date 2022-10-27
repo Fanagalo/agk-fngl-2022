@@ -7,6 +7,16 @@
 .archive-overview article {
     @include article-width;
     border-top: var(--archive-post-border);
+    .article-header {
+        margin-bottom: 0;
+    }
+    .article-meta {
+        margin-top: 1rem;
+    }
+    .article-title {
+        margin-top: 0;
+        font-size: var(--fs-xl);
+    }
 }
 
 .archive-post {
