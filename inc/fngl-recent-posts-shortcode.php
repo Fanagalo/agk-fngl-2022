@@ -12,9 +12,11 @@
  * [fngl_recent_posts posts_per_page='5' cat='7,10']
  * [fngl_recent_posts posts_per_page='10' cat='' order='asc' orderby='rand']
  * [fngl_recent_posts post_type='nlpost']
+ * [fngl_recent_posts showcat='yes'] shows category in header of article
+ * [fngl_recent_posts summary='excerpt'] displays excerpt intead of content
  */
 
-function fngl_recent_posts_shortcode($atts, $content = null)
+function fngl_recent_posts_shortcode($atts, $showcat = null, $summary = null, $content = null)
 {
 
     global $post;
@@ -25,6 +27,8 @@ function fngl_recent_posts_shortcode($atts, $content = null)
         'orderby'        => 'date',
         'posts_per_page' => '5',
         'post_type'      => 'post',
+        'showcat'        => 'no',
+        'summary'        => 'content',
     ), $atts));
 
     $args = array(
@@ -39,9 +43,9 @@ function fngl_recent_posts_shortcode($atts, $content = null)
 
     $posts = get_posts($args);
 
+
     if (!empty($posts)) :
 
-        // shows posts when available
         foreach ($posts as $post) {
 
             setup_postdata($post);
@@ -51,20 +55,32 @@ function fngl_recent_posts_shortcode($atts, $content = null)
 
                 . '<div class="post-thumbnail"><a href=' .  esc_url(get_permalink()) . ' rel="bookmark">' . get_the_post_thumbnail() . '</a></div>'
 
-                . '<header class="article-header">'
-                . '<div class="article-categories">' . get_the_category() . '</div><!-- .entry-category -->'
+                . '<header class="article-header">';
+    
+            if($showcat =='yes') {
+                $output_content .=
+                    '<div class="article-categories">' . get_the_category_list(' ') . '</div><!-- .entry-category -->';
+                }
 
-                . '<h2 class="article-title"><a href=' .  esc_url(get_permalink()) . ' rel="bookmark">' . get_the_title() . '</a></h2>'
+            $output_content .=
+                '<h2 class="article-title"><a href=' .  esc_url(get_permalink()) . ' rel="bookmark">' . get_the_title() . '</a></h2>'
 
                 . '<div class="article-meta">'
                 . '<div class="article-post-date">' . get_the_date() . '</div>'
                 . '</div><!-- .article-meta -->'
 
-                . '</header><!-- .article-header -->'
+                . '</header><!-- .article-header -->';
 
-                . '<div class="article-content">' . apply_filters('the_content', get_the_content('Lees verder...')) . '</div><!-- .article-content -->'
+            if($summary =='excerpt') {
+                $output_content .=
+                    '<div class="article-content">' . get_the_excerpt() . '</div><!-- .article-content -->';
+                } else {
+                $output_content .=
+                    '<div class="article-content">' . apply_filters('the_content', get_the_content('Lees verder...')) . '</div><!-- .article-content -->';
+                }
 
-                . '<footer class="article-footer"></footer>'
+            $output_content .=
+                '<footer class="article-footer"></footer>'
 
                 . '</article>';
         }
