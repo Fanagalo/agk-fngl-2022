@@ -52,6 +52,8 @@ function fngl_recent_posts_shortcode($atts, $content = null)
                 . '<div class="post-thumbnail"><a href=' .  esc_url(get_permalink()) . ' rel="bookmark">' . get_the_post_thumbnail() . '</a></div>'
 
                 . '<header class="article-header">'
+                . '<div class="article-categories">' . get_the_category() . '</div><!-- .entry-category -->'
+
                 . '<h2 class="article-title"><a href=' .  esc_url(get_permalink()) . ' rel="bookmark">' . get_the_title() . '</a></h2>'
 
                 . '<div class="article-meta">'

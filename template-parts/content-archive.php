@@ -29,23 +29,7 @@
 
 	<div class="article-content">
 		<?php 
-			// echo '<p>' . wpse_custom_excerpts(35). '</p>'; 
-			
-			// the_content();
-
-			fngl_display_file_attachments($content);
-
-			// $attachment = new WPPCP_Post_Attachments();
-			//  $attachment->display_file_attachments($content); 
-			
-
-			// $output_content = get_the_content();
-			// var_dump($output_content);
-			// return $output_content;
-
-		
-
-
+			echo '<p>' . wpse_custom_excerpts(35). '</p>'; 
 		?>
 	</div><!-- .article-content -->
 

@@ -146,7 +146,6 @@ function agk_fngl_2022_scripts()
 add_action('wp_enqueue_scripts', 'agk_fngl_2022_scripts');
 
 /* Add functions from directory "inc" */
-require get_template_directory() . '/inc/attachments-on-archive.php';       // Add WPPCP attachments on archive pages
 require get_template_directory() . '/inc/comments-disable.php';             // Custom styling of the frontend and backend of the block editor 
 require get_template_directory() . '/inc/custom-block-styling.php';         // Custom styling of the frontend and backend of the block editor 
 require get_template_directory() . '/inc/custom-color-font-blocks.php';     // Custom colors and font sizes for block editor
