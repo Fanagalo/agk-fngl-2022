@@ -43,13 +43,32 @@ if ( ! function_exists( 'agk_fngl_2022_posted_by' ) ) :
 		$byline = sprintf(
 			/* translators: %s: post author. */
 			esc_html_x( 'by %s', 'post author', 'agk-fngl-2022' ),
-			'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
+			'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span> '
 		);
 
 		echo '<span class="byline"> ' . $byline . '</span>'; // WPCS: XSS OK.
 
 	}
 endif;
+
+if ( ! function_exists( 'agk_fngl_2022_search_cat' ) ) :
+	/**
+	 * Prints HTML with the categories for use in search results.
+	 */
+	function agk_fngl_2022_search_cat() {
+		// Hide category and tag text for pages.
+		if ( 'post' === get_post_type() ) {
+			/* translators: used between list items, there is a space after the comma */
+			$categories_list = get_the_category_list( esc_html__( ', ', 'agk-fngl-2022' ) );
+			if ( $categories_list ) {
+				/* translators: 1: list of categories. */
+				printf( '<span class="cat-links">' . esc_html__( 'in %1$s', 'agk-fngl-2022' ) . '</span>', $categories_list ); 
+			}
+		}
+	}
+endif;
+
+
 
 if ( ! function_exists( 'agk_fngl_2022_article_footer' ) ) :
 	/**

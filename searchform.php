@@ -16,8 +16,6 @@
  * one was passed to get_search_form() in the args array.
  */
 
-/* FNGL: slightly modified to meet theme requirements */
-
 $unique_id = agk_fngl_2022_unique_id( 'search-form-' );
 
 $aria_label = ! empty( $args['label'] ) ? 'aria-label="' . esc_attr( $args['label'] ) . '"' : '';
@@ -31,7 +29,8 @@ $aria_label = ! empty( $args['label'] ) ? 'aria-label="' . esc_attr( $args['labe
             placeholder="<?php echo esc_attr_x( 'Search &hellip;', 'placeholder', 'agk-fngl-2022' ); ?>" 
             value="<?php echo get_search_query(); ?>" 
             name="s" />
+        <input type="hidden" name="orderby" value="post_date">
+        <input type="hidden" name="order" value="desc">
     </label>
     <button type="submit" class="search-submit" value="<?php echo esc_attr_x( 'Search', 'submit button', 'agk-fngl-2022' ); ?>"></button>
 </form>
-

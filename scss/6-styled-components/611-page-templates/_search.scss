@@ -1,3 +1,20 @@
-.search main {
-    margin: 0;
+.search {
+    main {
+        margin: 0;
+    }
+    .page-header h1 {
+        font-family: var(--ff-sans);
+        font-weight: var(--fw-light);
+        font-style: normal;
+        font-size: var(--fs-xl);
+        color: var(--p-color);
+        padding-bottom: 1.75rem;
+        border-bottom: 1px solid var(--grey-lighter);
+        span {
+            text-transform: uppercase;
+            padding: 0.25rem 0.5rem 0.125rem;
+            background-color: var(--agk-licht-groen);
+            color: var(--p-color);
+        }
+    }
 }

@@ -59,7 +59,15 @@
 					'container'      => '',
 					'items_wrap' 	 => '<ul id="%1$s" class="%2$s" role="menubar">%3$s</ul>',
 				)
-			); ?>
+			); 
+
+			?>
 		</nav>
+			<?php if (is_user_logged_in()) {
+				get_search_form();
+			} 
+			?>
+
 	</div><!-- nav-area -->
+
 	<div class="nav-right-bg"></div>

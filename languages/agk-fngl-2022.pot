@@ -1,25 +1,25 @@
-# Copyright (C) 2017 Automattic
-# This file is distributed under the GNU General Public License v2 or later.
+#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: _s 1.0.0\n"
-"Report-Msgid-Bugs-To: https://wordpress.org/tags/_s\n"
-"POT-Creation-Date: 2020-10-19 17:51+0000\n"
+"Project-Id-Version: Het AGK (FNGL 2022)\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-07-17 11:28+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: \n"
+"Language: \n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2023-07-17 11:30+0000\n"
-"Last-Translator: Jaap Wiering\n"
-"Language-Team: Nederlands\n"
 "X-Generator: Loco https://localise.biz/\n"
-"Language: nl_NL\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Loco-Version: 2.5.2; wp-5.7.2"
+"X-Loco-Version: 2.6.4; wp-6.2.2\n"
+"X-Domain: agk-fngl-2022"
 
 #. used between list items, there is a space after the comma
 #: inc/template-tags.php:62 inc/template-tags.php:81
 msgid ", "
-msgstr ", "
+msgstr ""
 
 #: functions.php:107
 msgid "3 Column Sidebar"
@@ -27,7 +27,7 @@ msgstr ""
 
 #: functions.php:109 functions.php:118
 msgid "Add widgets here."
-msgstr "Voeg hier widgets toe."
+msgstr ""
 
 #: inc/custom-color-font-blocks.php:33
 msgid "blauw"
@@ -35,7 +35,7 @@ msgstr ""
 
 #: comments.php:65
 msgid "Comments are closed."
-msgstr "Reageren niet meer mogelijk."
+msgstr ""
 
 #. 1: comment count number, 2: title.
 #: comments.php:40
@@ -43,14 +43,14 @@ msgstr "Reageren niet meer mogelijk."
 msgctxt "comments title"
 msgid "%1$s thought on &ldquo;%2$s&rdquo;"
 msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
-msgstr[0] "%1$s reactie op &ldquo;%2$s&rdquo;"
-msgstr[1] "%1$s reacties op &ldquo;%2$s&rdquo;"
+msgstr[0] ""
+msgstr[1] ""
 
 #. %s: Name of current post. Only visible to screen readers
 #: template-parts/content.php:46 template-parts/content-kennismaken-met.php:46
 #, php-format
 msgid "Continue reading<span class=\"screen-reader-text\"> \"%s\"</span>"
-msgstr "Verder lezen<span class=\"screen-reader-text\"> \"%s\"</span>"
+msgstr ""
 
 #. Description of the theme
 msgid "Custom theme for Het Amsterdams Gemengd Koor, based op fngl_s-core 0.78"
@@ -60,7 +60,7 @@ msgstr ""
 #: inc/template-tags.php:118 template-parts/content-page.php:38
 #, php-format
 msgid "Edit <span class=\"screen-reader-text\">%s</span>"
-msgstr "Wijzigen <span class=\"screen-reader-text\">%s</span>"
+msgstr ""
 
 #: inc/custom-color-font-blocks.php:45
 msgid "Fanagalo gradient"
@@ -84,46 +84,40 @@ msgstr ""
 
 #. Name of the theme
 msgid "Het AGK (FNGL 2022)"
-msgstr "Het AGK (FNGL 2022)"
+msgstr ""
 
 #. URI of the theme
 #. Author URI of the theme
 msgid "https://fanagalo.nl"
-msgstr "https://fanagalo.nl"
+msgstr ""
 
 #. 1: list of categories.
 #: inc/template-tags.php:65
 #, php-format
 msgid "in %1$s"
-msgstr "in %1$s"
+msgstr ""
 
 #: 404.php:30
 msgid ""
 "It looks like nothing was found at this location. Maybe try one of the links "
 "below or a search?"
 msgstr ""
-"Relax, je hebt niets fout gedaan, maar we kunnen helaas de juiste pagina "
-"niet vinden. Probeer eens één van de andere links in het menu of op de "
-"vorige pagina."
 
 #: template-parts/content-none.php:44
 msgid ""
 "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
 "searching can help."
 msgstr ""
-"Het lijkt alsof we niet kunnen vinden wat je zoekt. Misschien helpt zoeken. "
 
 #. Author of the theme
-#, fuzzy
-#| msgid "Jaap Wiering · Fanagalo"
 msgid "Jaap Wiering - Fanagalo"
-msgstr "Jaap Wiering · Fanagalo"
+msgstr ""
 
 #. %s: post title
 #: inc/template-tags.php:101
 #, php-format
 msgid "Leave a Comment<span class=\"screen-reader-text\"> on %s</span>"
-msgstr "Geef een reactie <span class=\"screen-reader-text\">op %s</span>"
+msgstr ""
 
 #: inc/custom-color-font-blocks.php:35
 msgid "licht-groen"
@@ -137,83 +131,83 @@ msgstr ""
 #: inc/template-tags.php:88
 msgctxt "list item separator"
 msgid ", "
-msgstr ", "
+msgstr ""
 
 #: header.php:55
 msgid "Main Menu"
-msgstr "Hoofdmenu"
+msgstr ""
 
 #: inc/custom-color-font-blocks.php:66
 msgctxt "Name of the large font size in the block editor"
 msgid "Large"
-msgstr "Groot"
+msgstr ""
 
 #: inc/custom-color-font-blocks.php:72
 msgctxt "Name of the larger font size in the block editor"
 msgid "Larger"
-msgstr "Groter"
+msgstr ""
 
 #: inc/custom-color-font-blocks.php:60
 msgctxt "Name of the regular font size in the block editor"
 msgid "Regular"
-msgstr "Normaal"
+msgstr ""
 
 #: inc/custom-color-font-blocks.php:54
 msgctxt "Name of the small font size in the block editor"
 msgid "Small"
-msgstr "Klein"
+msgstr ""
 
 #: template-parts/content-none.php:14
 msgid "Nothing Found"
-msgstr "Niets gevonden"
+msgstr ""
 
 #. 1: title.
 #: comments.php:34
 #, php-format
 msgid "One thought on &ldquo;%1$s&rdquo;"
-msgstr "Een reactie op &ldquo;%1$s&rdquo;"
+msgstr ""
 
 #: 404.php:21
 msgid "Oops! That page can&rsquo;t be found."
-msgstr "Oeps, pagina niet gevonden..."
+msgstr ""
 
 #. Name of the template
 msgid "Page without title"
-msgstr "Pagina zonder titel"
+msgstr ""
 
 #: template-parts/content-page.php:25 template-parts/content.php:57
 #: template-parts/content-kennismaken-met.php:57
 msgid "Pages:"
-msgstr "Pagina's:"
+msgstr ""
 
 #: searchform.php:31
 msgctxt "placeholder"
 msgid "Search &hellip;"
-msgstr "Zoek..."
+msgstr ""
 
 #. %s: post author.
 #: inc/template-tags.php:45
 #, php-format
 msgctxt "post author"
 msgid "by %s"
-msgstr "door %s"
+msgstr ""
 
 #. %s: post date.
 #: inc/template-tags.php:29
 #, php-format
 msgctxt "post date"
 msgid "Posted on %s"
-msgstr "Gepubliceerd op %s"
+msgstr ""
 
 #. 1: list of categories.
 #: inc/template-tags.php:84
 #, php-format
 msgid "Posted in %1$s"
-msgstr "Gepubliceerd in %1$s"
+msgstr ""
 
 #: functions.php:44
 msgid "Primary"
-msgstr "Primair"
+msgstr ""
 
 #. 1: link to WP admin new post page.
 #: template-parts/content-none.php:24
@@ -221,7 +215,6 @@ msgstr "Primair"
 msgid ""
 "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
-"Klaar om het eerste bericht te publiceren? <a href=\"%1$s\">Begin hier</a>."
 
 #: inc/custom-color-font-blocks.php:32
 msgid "rood"
@@ -229,13 +222,13 @@ msgstr ""
 
 #: searchform.php:27
 msgid "Search for:"
-msgstr "Zoek naar: "
+msgstr ""
 
 #. %s: search query.
 #: search.php:23
 #, php-format
 msgid "Search Results for: %s"
-msgstr "Zoekresultaten voor ‘%s’"
+msgstr ""
 
 #: inc/custom-color-font-blocks.php:67
 msgctxt "Short name of the large font size in the block editor."
@@ -259,26 +252,24 @@ msgstr ""
 
 #: header.php:29
 msgid "Skip to content"
-msgstr "Verder naar inhoud"
+msgstr ""
 
 #: template-parts/content-none.php:37
 msgid ""
 "Sorry, but nothing matched your search terms. Please try again with some "
 "different keywords."
 msgstr ""
-"Er kwam niets overeen met je zoekterm. Probeer het eens met andere "
-"zoektermen."
 
 #: searchform.php:35
 msgctxt "submit button"
 msgid "Search"
-msgstr "Zoek"
+msgstr ""
 
 #. 1: list of tags.
 #: inc/template-tags.php:91
 #, php-format
 msgid "Tagged %1$s"
-msgstr "Tag %1$s"
+msgstr ""
 
 #: inc/custom-color-font-blocks.php:28
 msgid "tekstkleur"

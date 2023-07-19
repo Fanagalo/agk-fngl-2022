@@ -1,0 +1,14 @@
+.search-results {
+    .article-title {
+        font-size: var(--fs-xl);
+        line-height: var(--lh-l);
+    }
+}
+
+.article-summary {
+    @include article-width;
+    @include paragraph-styling;
+    p {
+        display: inline;
+    }
+}

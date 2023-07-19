@@ -38,9 +38,21 @@ get_header();
 			get_template_part( 'template-parts/content', 'search' );
 
 		endwhile;
+		?>
+		<div class="list-pagination-full">
+			<div class="list-pagination-area">
+			<?php 
+				echo paginate_links( array(
+					'mid_size'     => 1,
+					'prev_text'    => '«', // default '« Previous' translates
+					'next_text'    => '»', // default 'Next »' translates
+				) );
+			?>
+			</div><!-- .list-pagination-area -->
+		</div><!-- .list-pagination-full -->
 
-		the_posts_navigation();
 
+	<?php
 	else :
 
 		get_template_part( 'template-parts/content', 'none' );
