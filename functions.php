@@ -151,7 +151,7 @@ require get_template_directory() . '/inc/custom-block-styling.php';         // C
 require get_template_directory() . '/inc/custom-color-font-blocks.php';     // Custom colors and font sizes for block editor
 require get_template_directory() . '/inc/custom-header.php';                // Custom Header
 require get_template_directory() . '/inc/customizer.php';                   // Customizer
-require get_template_directory() . '/inc/filter-search-cat.php';  			// Filters search results to posts in certain categories
+// require get_template_directory() . '/inc/filter-search-cat.php';  			// Filters search results to posts in certain categories
 require get_template_directory() . '/inc/fngl-recent-posts-shortcode.php';  // Shortcode to display overview of pages, posts of CPT using a shortcode
 require get_template_directory() . '/inc/template-functions.php';           // Functions which enhance the theme by hooking into WordPress.
 require get_template_directory() . '/inc/template-tags.php';                // Custom template tags for this theme.
