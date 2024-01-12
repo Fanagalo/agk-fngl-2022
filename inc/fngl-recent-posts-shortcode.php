@@ -85,7 +85,7 @@ function fngl_recent_posts_shortcode($atts, $showcat = null, $summary = null, $c
                 . '</article>';
         }
 
-        wp_reset_postdata();
+//        wp_reset_postdata();
 
         return '<div  class="fngl-recent-posts">'
             . $output_content // option for content
