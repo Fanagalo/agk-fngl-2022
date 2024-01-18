@@ -16,9 +16,8 @@
  * [fngl_recent_posts summary='excerpt'] displays excerpt intead of content
  */
 
-function fngl_recent_posts_shortcode($atts, $showcat = null, $summary = null, $content = null)
+function fngl_recent_posts_shortcode($atts, $showcat = null, $summary = null)
 {
-
     global $post;
 
     extract(shortcode_atts(array(
@@ -43,14 +42,13 @@ function fngl_recent_posts_shortcode($atts, $showcat = null, $summary = null, $c
 
     $posts = get_posts($args);
 
-
     if (!empty($posts)) :
 
         foreach ($posts as $post) {
 
             setup_postdata($post);
 
-            $output_content .=
+            $output .=
                 '<article id="post-' . get_the_ID() . '"' . 'class="' . esc_attr(implode(' ', get_post_class())) . '"">'
 
                 . '<div class="post-thumbnail"><a href=' .  esc_url(get_permalink()) . ' rel="bookmark">' . get_the_post_thumbnail() . '</a></div>'
@@ -58,11 +56,11 @@ function fngl_recent_posts_shortcode($atts, $showcat = null, $summary = null, $c
                 . '<header class="article-header">';
     
             if($showcat =='yes') {
-                $output_content .=
+                $output .=
                     '<div class="article-categories">' . get_the_category_list(' ') . '</div><!-- .entry-category -->';
                 }
 
-            $output_content .=
+            $output .=
                 '<h2 class="article-title"><a href=' .  esc_url(get_permalink()) . ' rel="bookmark">' . get_the_title() . '</a></h2>'
 
                 . '<div class="article-meta">'
@@ -72,23 +70,23 @@ function fngl_recent_posts_shortcode($atts, $showcat = null, $summary = null, $c
                 . '</header><!-- .article-header -->';
 
             if($summary =='excerpt') {
-                $output_content .=
+                $output .=
                     '<div class="article-content">' . get_the_excerpt() . '</div><!-- .article-content -->';
                 } else {
-                $output_content .=
+                $output .=
                     '<div class="article-content">' . apply_filters('the_content', get_the_content('Lees verder...')) . '</div><!-- .article-content -->';
                 }
 
-            $output_content .=
+            $output .=
                 '<footer class="article-footer"></footer>'
 
                 . '</article>';
         }
 
-//        wp_reset_postdata();
+        wp_reset_postdata();
 
         return '<div  class="fngl-recent-posts">'
-            . $output_content // option for content
+            . $output // option for content
             . '</div>';
 
     else :
