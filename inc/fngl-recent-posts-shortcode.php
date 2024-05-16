@@ -27,6 +27,7 @@ function fngl_recent_posts_shortcode($atts, $showcat = null, $summary = null)
         'posts_per_page' => '5',
         'post_type'      => 'post',
         'showcat'        => 'no',
+        'showdate'       => 'yes',
         'summary'        => 'content',
     ), $atts));
 
@@ -36,6 +37,8 @@ function fngl_recent_posts_shortcode($atts, $showcat = null, $summary = null)
         'orderby'        => $orderby,
         'posts_per_page' => $posts_per_page,
         'post_type'      => $post_type,
+        // 'showcat'        => $showcat,
+        'showdate'       => $showdate,
     );
 
     $output = '';
@@ -63,9 +66,15 @@ function fngl_recent_posts_shortcode($atts, $showcat = null, $summary = null)
             $output .=
                 '<h2 class="article-title"><a href=' .  esc_url(get_permalink()) . ' rel="bookmark">' . get_the_title() . '</a></h2>'
 
-                . '<div class="article-meta">'
-                . '<div class="article-post-date">' . get_the_date() . '</div>'
-                . '</div><!-- .article-meta -->'
+                . '<div class="article-meta">';
+
+            if($showdate == 'yes') {
+                $output .=
+                    '<div class="article-post-date">' . get_the_date() . '</div>';
+                }
+
+            $output .=
+                '</div><!-- .article-meta -->'
 
                 . '</header><!-- .article-header -->';
 
