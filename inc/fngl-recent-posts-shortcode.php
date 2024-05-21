@@ -37,7 +37,7 @@ function fngl_recent_posts_shortcode($atts, $showcat = null, $summary = null)
         'orderby'        => $orderby,
         'posts_per_page' => $posts_per_page,
         'post_type'      => $post_type,
-        // 'showcat'        => $showcat,
+        'showcat'        => $showcat,
         'showdate'       => $showdate,
     );
 
@@ -53,9 +53,7 @@ function fngl_recent_posts_shortcode($atts, $showcat = null, $summary = null)
 
             $output .=
                 '<article id="post-' . get_the_ID() . '"' . 'class="' . esc_attr(implode(' ', get_post_class())) . '"">'
-
                 . '<div class="post-thumbnail"><a href=' .  esc_url(get_permalink()) . ' rel="bookmark">' . get_the_post_thumbnail() . '</a></div>'
-
                 . '<header class="article-header">';
     
             if($showcat =='yes') {
@@ -65,7 +63,6 @@ function fngl_recent_posts_shortcode($atts, $showcat = null, $summary = null)
 
             $output .=
                 '<h2 class="article-title"><a href=' .  esc_url(get_permalink()) . ' rel="bookmark">' . get_the_title() . '</a></h2>'
-
                 . '<div class="article-meta">';
 
             if($showdate == 'yes') {
@@ -75,7 +72,6 @@ function fngl_recent_posts_shortcode($atts, $showcat = null, $summary = null)
 
             $output .=
                 '</div><!-- .article-meta -->'
-
                 . '</header><!-- .article-header -->';
 
             if($summary =='excerpt') {
@@ -88,7 +84,6 @@ function fngl_recent_posts_shortcode($atts, $showcat = null, $summary = null)
 
             $output .=
                 '<footer class="article-footer"></footer>'
-
                 . '</article>';
         }
 
@@ -99,7 +94,6 @@ function fngl_recent_posts_shortcode($atts, $showcat = null, $summary = null)
             . '</div>';
 
     else :
-
         // shows message when no posts available
         return; // no empty state
     endif;
