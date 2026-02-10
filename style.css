@@ -5,26 +5,10 @@
  Author: Jaap Wiering - Fanagalo
  Author URI: https://fanagalo.nl
  Description: Custom theme for Het Amsterdams Gemengd Koor, based op fngl_s-core 0.78 
- Version: 2.14
-
+ Version: 2.15
  License: GNU General Public License v2 or later
  Text Domain: agk-fngl-2022
- /* 
-
-/*
-  Theme coding based on Underscores
-  Structure based on ITCSS
-  Inspired by Sami Keijonen wcnordic2019-master theme https://github.com/samikeijonen/wcnordic-2019
-*/
-/*--------------------------------------------------------------
-# 1. Global variables (ITCSS settings)
-  Config switches
-
-Future expansions: 
-- fonts          => declaration of @font-face 
-- spacing        => spacing variables
-- transitions    => transition variables
---------------------------------------------------------------*/
+ */
 :root {
   /* brand colors */
   --agk-bg: #fffbf5;
@@ -53,30 +37,30 @@ Future expansions:
   --mark-color: #fd0;
   --success-color: #0b0;
   /* primary tints - add white or black */
-  --primary-lightest: #f6f1d8;
-  --primary-lighter: #ece2b0;
-  --primary-light: #e3d489;
-  --primary-dark: #a39449;
-  --primary-darker: #6d6331;
-  --primary-darkest: #363118;
+  --primary-lightest: #($primary-lightest);
+  --primary-lighter: #($primary-lighter);
+  --primary-light: #($primary-light);
+  --primary-dark: #($primary-dark);
+  --primary-darker: #($primary-darker);
+  --primary-darkest: #($primary-darkest);
   /* secondary tints - change lightness */
-  --secondary-lightest: #f2f2f2;
-  --secondary-lighter: #cccccc;
-  --secondary-light: #b3b3b3;
-  --secondary-middle-light: #999999;
-  --secondary-middle: gray;
-  --secondary-middle-dark: #666666;
-  --secondary-dark: #4d4d4d;
-  --secondary-darker: #333333;
-  --secondary-darkest: #1a1a1a;
+  --secondary-lightest: #(secondary-lightest);
+  --secondary-lighter: #(secondary-lighter);
+  --secondary-light: #(secondary-light);
+  --secondary-middle-light: #(secondary-middle-light);
+  --secondary-middle: #(secondary-middle);
+  --secondary-middle-dark: #(secondary-middle-dark);
+  --secondary-dark: #(secondary-dark);
+  --secondary-darker: #(secondary-darker);
+  --secondary-darkest: #(secondary-darkest);
   /* greys */
-  --grey-lightest: #f2f2f2;
-  --grey-lighter: silver;
-  --grey-light: #a0a0a0;
-  --grey-middle: hsl(0, 0%, 50%);
-  --grey-dark: #606060;
-  --grey-darker: #404040;
-  --grey-darkest: #202020;
+  --grey-lightest: #($grey-lightest);
+  --grey-lighter: #($grey-lighter);
+  --grey-light: #($grey-light);
+  --grey-middle: #($grey-middle);
+  --grey-dark: #($grey-dark);
+  --grey-darker: #($grey-darker);
+  --grey-darkest: #($grey-darkest);
   /* synonyms */
   --diap-color: var(--white);
 }
@@ -166,14 +150,8 @@ the typographical rhythm is 28px (1.75rem)
   --max-width-container: 74.5rem;
   --vert-scrollbar: 16px;
   --margin-column: 1rem;
-} /*--------------------------------------------------------------
-# 2. Mixins and functions (ITCSS tools)
-  Default mixins and functions
---------------------------------------------------------------*/
-/*--------------------------------------------------------------
-# 3. Resets (ITCSS generic)
-  Ground-zero styles (resets, box-sizing, etc.).
---------------------------------------------------------------*/
+}
+
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
@@ -528,10 +506,6 @@ html {
   box-sizing: inherit;
 }
 
-/*--------------------------------------------------------------
-# 4. HTML Elements
-  Unclassed HTML elements (type selectors).
---------------------------------------------------------------*/
 html {
   font-size: 16px;
 }
@@ -564,12 +538,6 @@ blockquote {
   max-width: var(--max-width-text);
   margin-left: auto;
   margin-right: auto;
-  text-align: center;
-  font-style: italic;
-  padding: 1rem 0;
-  border-top: 2px solid var(--agk-geel-achtergrond);
-  border-bottom: 2px solid var(--agk-geel-achtergrond);
-  margin-bottom: 1.75rem;
 }
 @media screen and (min-width: 37.5em) {
   blockquote.alignwide, blockquote.alignfull {
@@ -578,6 +546,14 @@ blockquote {
     width: 100%;
     max-width: var(--max-width-container);
   }
+}
+blockquote {
+  text-align: center;
+  font-style: italic;
+  padding: 1rem 0;
+  border-top: 2px solid var(--agk-geel-achtergrond);
+  border-bottom: 2px solid var(--agk-geel-achtergrond);
+  margin-bottom: 1.75rem;
 }
 blockquote p {
   font-size: var(--fs-m) !important;
@@ -900,17 +876,6 @@ big {
   font-size: 125%;
 }
 
-/*--------------------------------------------------------------
-# 5. structure objects (ITCSS objects)
-  Objects & Layouts - Undecorated design patterns.
-
-Future expansions: 
-- animations    => 
-- flow-spacing  => 
-- layouts       => declaration of grid 
-- max-width     => 
-- svg           => 
---------------------------------------------------------------*/
 :root {
   /* header */
   --header-full-bg: var(--agk-bg);
@@ -1139,10 +1104,6 @@ aside.sidebar-fw-area {
   padding: 0;
 }
 
-/*--------------------------------------------------------------
-# 6. styled components (ITCSS components)
-  Components - specific UI components, like: accordions, ...
---------------------------------------------------------------*/
 .main-area {
   padding: 0;
 }
@@ -1179,18 +1140,12 @@ aside.sidebar-fw-area {
 .article-title {
   margin-top: 1rem;
   margin-bottom: 0;
+}
+.article-title {
   width: 100%;
   max-width: var(--max-width-text);
   margin-left: auto;
   margin-right: auto;
-  font-family: var(--ff-serif);
-  font-weight: var(--fw-bold);
-  font-style: italic;
-  font-size: var(--fs-title);
-  line-height: var(--lh-xl);
-  color: var(--heading-color);
-  clear: both;
-  word-break: break-word;
 }
 @media screen and (min-width: 37.5em) {
   .article-title.alignwide, .article-title.alignfull {
@@ -1199,6 +1154,16 @@ aside.sidebar-fw-area {
     width: 100%;
     max-width: var(--max-width-container);
   }
+}
+.article-title {
+  font-family: var(--ff-serif);
+  font-weight: var(--fw-bold);
+  font-style: italic;
+  font-size: var(--fs-title);
+  line-height: var(--lh-xl);
+  color: var(--heading-color);
+  clear: both;
+  word-break: break-word;
 }
 
 .has-background article:first-of-type .article-title {
@@ -1220,9 +1185,6 @@ aside.sidebar-fw-area {
   max-width: var(--max-width-text);
   margin-left: auto;
   margin-right: auto;
-  font-size: var(--fs-s);
-  font-weight: var(--fw-light);
-  text-transform: uppercase;
 }
 @media screen and (min-width: 37.5em) {
   .article-categories.alignwide, .article-categories.alignfull,
@@ -1233,6 +1195,12 @@ aside.sidebar-fw-area {
     width: 100%;
     max-width: var(--max-width-container);
   }
+}
+.article-categories,
+.article-meta {
+  font-size: var(--fs-s);
+  font-weight: var(--fw-light);
+  text-transform: uppercase;
 }
 
 .article-categories {
@@ -1263,6 +1231,8 @@ aside.sidebar-fw-area {
   border-radius: 50px;
   padding: 2px 0.5rem 2px 0.5rem;
   line-height: var(--lh-xxs);
+}
+.article-tags a {
   background-color: var(--grey-lightest);
   color: var(--paragraph-color);
   margin-left: 0.5rem;
@@ -1274,6 +1244,8 @@ aside.sidebar-fw-area {
 
 .post-thumbnail {
   display: block;
+}
+.post-thumbnail {
   width: 100%;
   max-width: var(--max-width-text);
   margin-left: auto;
@@ -1459,6 +1431,8 @@ article:not(:last-child) footer {
   display: grid;
   grid-template-columns: auto auto;
   margin-bottom: 1rem;
+}
+.nav-links {
   margin-left: auto;
   margin-right: auto;
   width: 100%;
@@ -1493,6 +1467,8 @@ article:not(:last-child) footer {
   height: 18px;
   background: no-repeat left var(--arrow-left);
   background-size: cover;
+}
+.nav-previous a::before {
   margin-left: -18px;
   margin-bottom: -0.25rem;
 }
@@ -1504,6 +1480,8 @@ article:not(:last-child) footer {
   height: 18px;
   background: no-repeat left var(--arrow-right);
   background-size: cover;
+}
+.nav-next a::after {
   margin-right: -18px;
   margin-bottom: -0.25rem;
 }
@@ -1514,9 +1492,6 @@ article:not(:last-child) footer {
   max-width: var(--max-width-text);
   margin-left: auto;
   margin-right: auto;
-  background-color: var(--primary-lightest);
-  margin: 1rem auto;
-  padding: 1rem;
 }
 @media screen and (min-width: 37.5em) {
   .list-pagination-full.alignwide, .list-pagination-full.alignfull {
@@ -1525,6 +1500,11 @@ article:not(:last-child) footer {
     width: 100%;
     max-width: var(--max-width-container);
   }
+}
+.list-pagination-full {
+  background-color: var(--primary-lightest);
+  margin: 1rem auto;
+  padding: 1rem;
 }
 
 .list-pagination-area {
@@ -1992,6 +1972,8 @@ aside.sidebar-fw-area .widget_nav_menu ul.menu .menu-item {
     height: 12px;
     background: no-repeat left var(--arrow-down-yellow);
     background-size: cover;
+  }
+  .nav-area .menu-toggle .menu-button-text::after {
     margin-left: 0.35rem;
   }
   .nav-area .menu-toggle.activated .menu-button-text::after {
@@ -2119,6 +2101,9 @@ aside.sidebar-fw-area .widget_nav_menu ul.menu .menu-item {
     height: 14px;
     background: no-repeat left var(--arrow-down-yellow);
     background-size: cover;
+  }
+  .nav-area .menu > .menu-item-has-children > a::after,
+  .nav-area .menu > ul > .page_item_has_children > a::after {
     margin-left: 0.25rem;
     margin-bottom: -2px;
   }
@@ -2246,6 +2231,8 @@ aside.sidebar-fw-area .widget_nav_menu ul.menu .menu-item {
   height: 24px;
   background: no-repeat left var(--search);
   background-size: cover;
+}
+.search-submit::before {
   margin-bottom: -6px;
 }
 
@@ -2302,7 +2289,6 @@ aside.sidebar-fw-area .widget_nav_menu ul.menu .menu-item {
   max-width: var(--max-width-text);
   margin-left: auto;
   margin-right: auto;
-  border-top: var(--archive-post-border);
 }
 @media screen and (min-width: 37.5em) {
   .archive-overview article.alignwide, .archive-overview article.alignfull {
@@ -2311,6 +2297,9 @@ aside.sidebar-fw-area .widget_nav_menu ul.menu .menu-item {
     width: 100%;
     max-width: var(--max-width-container);
   }
+}
+.archive-overview article {
+  border-top: var(--archive-post-border);
 }
 .archive-overview article .article-header {
   margin-bottom: 0;
@@ -2389,6 +2378,8 @@ a.archive-post-excerpt {
   border-radius: 50px;
   padding: 2px 0.5rem 2px 0.5rem;
   line-height: var(--lh-xxs);
+}
+.archive-post-readmore {
   background-color: var(--eiklinde-rood);
 }
 .archive-post-readmore:hover {
@@ -2409,7 +2400,6 @@ a.archive-post-readmore {
   max-width: var(--max-width-text);
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 2rem;
 }
 @media screen and (min-width: 37.5em) {
   .no-results.alignwide, .no-results.alignfull,
@@ -2420,6 +2410,10 @@ a.archive-post-readmore {
     width: 100%;
     max-width: var(--max-width-container);
   }
+}
+.no-results,
+.not-found {
+  margin-bottom: 2rem;
 }
 
 .search-results .article-title {
@@ -2432,13 +2426,6 @@ a.archive-post-readmore {
   max-width: var(--max-width-text);
   margin-left: auto;
   margin-right: auto;
-  font-family: var(--ff-serif);
-  font-weight: var(--fw-regular);
-  font-size: var(--fs-paragraph);
-  line-height: var(--lh-paragraph);
-  color: var(--paragraph-color);
-  margin-top: 0;
-  margin-bottom: var(--lh-paragraph);
 }
 @media screen and (min-width: 37.5em) {
   .article-summary.alignwide, .article-summary.alignfull {
@@ -2448,21 +2435,19 @@ a.archive-post-readmore {
     max-width: var(--max-width-container);
   }
 }
+.article-summary {
+  font-family: var(--ff-serif);
+  font-weight: var(--fw-regular);
+  font-size: var(--fs-paragraph);
+  line-height: var(--lh-paragraph);
+  color: var(--paragraph-color);
+  margin-top: 0;
+  margin-bottom: var(--lh-paragraph);
+}
 .article-summary p {
   display: inline;
 }
 
-/*--------------------------------------------------------------
-### 621. Core Blocks - editor related styles.
-
-Based on WordPress 5.6 = Block Editor versie 9.2
-Composed on 20201209
-
-Reminder: disable loading default CSS with
-  wp_dequeue_style( 'wp-block-library' );
-  wp_dequeue_style( 'wp-block-library-theme' );
-in functions.php
---------------------------------------------------------------*/
 /**
  * Variables found in Gutenberg blocks 
  *
@@ -3766,6 +3751,8 @@ section.wp-block-cover-image > h2 {
   color: var(--heading-color);
   clear: both;
   word-break: break-word;
+}
+.wp-block-latest-posts.wp-block-latest-posts__list > li > a {
   font-size: var(--fs-title);
   color: var(--agk-rood);
 }
@@ -5287,9 +5274,6 @@ p.has-text-color a {
     content: "​";
 }
  */
-/*--------------------------------------------------------------
-# Custom fngl_s-code styles continued
---------------------------------------------------------------*/
 .wp-caption {
   margin-bottom: 1.5em;
   max-width: 100%;
@@ -5432,9 +5416,6 @@ p.has-text-color a {
   max-width: var(--max-width-text);
   margin-left: auto;
   margin-right: auto;
-  border: 2px var(--agk-geel-tekst) solid;
-  padding: 1rem;
-  margin-bottom: 1.75rem;
 }
 @media screen and (min-width: 37.5em) {
   #loginform.alignwide, #loginform.alignfull {
@@ -5443,6 +5424,11 @@ p.has-text-color a {
     width: 100%;
     max-width: var(--max-width-container);
   }
+}
+#loginform {
+  border: 2px var(--agk-geel-tekst) solid;
+  padding: 1rem;
+  margin-bottom: 1.75rem;
 }
 #loginform label {
   font-family: var(--ff-sans);
@@ -5499,6 +5485,8 @@ p.has-text-color a {
   color: var(--paragraph-color);
   margin-top: 0;
   margin-bottom: var(--lh-paragraph);
+}
+.cn-text-container {
   color: var(--white);
 }
 
@@ -5590,6 +5578,8 @@ p.has-text-color a {
   border-radius: 50px;
   padding: 2px 0.5rem 2px 0.5rem;
   line-height: var(--lh-xxs);
+}
+.fngl-em-event-list a.readmore {
   display: inline-block;
   font-family: var(--ff-sans);
   background-color: var(--grey-middle);
@@ -5757,8 +5747,6 @@ example of shortcode
   max-width: var(--max-width-text);
   margin-left: auto;
   margin-right: auto;
-  padding: 1rem;
-  border: 2px solid var(--agk-geel-achtergrond);
 }
 @media screen and (min-width: 37.5em) {
   .ngg-albumoverview.default-view .ngg-album.alignwide, .ngg-albumoverview.default-view .ngg-album.alignfull {
@@ -5767,6 +5755,10 @@ example of shortcode
     width: 100%;
     max-width: var(--max-width-container);
   }
+}
+.ngg-albumoverview.default-view .ngg-album {
+  padding: 1rem;
+  border: 2px solid var(--agk-geel-achtergrond);
 }
 .ngg-albumoverview.default-view .ngg-albumcontent {
   background-color: transparent;
@@ -5787,6 +5779,8 @@ example of shortcode
   color: var(--heading-color);
   clear: both;
   word-break: break-word;
+}
+.ngg-albumoverview.default-view .ngg-albumtitle {
   font-size: var(--fs-l);
   text-transform: none;
   clear: none;
@@ -5807,6 +5801,8 @@ example of shortcode
   margin-right: auto;
   width: 100%;
   max-width: var(--max-width-container);
+}
+.article-content ul.ngg-breadcrumbs {
   border-top: 2px solid var(--agk-geel-achtergrond);
   background-color: var(--agk-bg);
   padding: 0.5rem 1rem;
@@ -5856,7 +5852,6 @@ example of shortcode
   max-width: var(--max-width-text);
   margin-left: auto;
   margin-right: auto;
-  float: none !important;
 }
 @media screen and (min-width: 37.5em) {
   .agk-thermometer svg.alignwide, .agk-thermometer svg.alignfull {
@@ -5865,6 +5860,9 @@ example of shortcode
     width: 100%;
     max-width: var(--max-width-container);
   }
+}
+.agk-thermometer svg {
+  float: none !important;
 }
 
 /**
@@ -5880,28 +5878,11 @@ example of shortcode
   width: auto;
 }
 
-/*--------------------------------------------------------------
-# 7. overrides (ITCSS trumps)
-  Utilities - Helpers and overrides.
-  The dirty layer, with overrides and !important
-
-Future expansions: 
-+ accessibility           =>
-+ alignment               =>
-- color-palette           =>
-- font-sizes              =>
-- helpers                 =>
-- max-width               =>
-- prefers-reduced-motion  =>
-- spacing                 =>
-- text                    =>
---------------------------------------------------------------*/
 /* Text meant only for screen readers. */
 .screen-reader-text {
   border: 0;
   clip: rect(1px, 1px, 1px, 1px);
-  -webkit-clip-path: inset(50%);
-          clip-path: inset(50%);
+  clip-path: inset(50%);
   height: 1px;
   margin: -1px;
   overflow: hidden;
@@ -5917,8 +5898,7 @@ Future expansions:
   border-radius: 3px;
   box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
   clip: auto !important;
-  -webkit-clip-path: none;
-          clip-path: none;
+  clip-path: none;
   color: #21759b;
   display: block;
   font-size: 14px;

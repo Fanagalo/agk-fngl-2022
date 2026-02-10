@@ -1,0 +1,12 @@
+/**
+ * Custom CSS for plugin 
+ * Ninja Forms, plugin by Saturday Drive, version 3.5.4
+ * https://nl.wordpress.org/plugins/ninja-forms/
+ */
+
+@use "../../1-global-variables/width" as width;
+@use "../../2-mixins-functions/mixins" as mixins;
+
+.nf-form-cont {
+    @include mixins.article-width;
+}

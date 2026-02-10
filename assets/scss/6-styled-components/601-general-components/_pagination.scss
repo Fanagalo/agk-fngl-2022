@@ -1,0 +1,89 @@
+@use "../../2-mixins-functions/mixins" as mixins;
+
+:root {
+    --pagination-background-color: transparent;
+}
+
+.nav-links {
+    background-color: var(--pagination-background-color);
+    border-top: 1px solid var(--primary-color);
+    border-bottom: 1px solid var(--primary-color);
+    display: grid;
+    grid-template-columns: auto auto;
+    margin-bottom: 1rem;
+    @include mixins.alignwide;
+}
+
+.nav-previous,
+.nav-next {
+    background-color: var(--pagination-background-color);
+    padding: 1rem 18px;
+    line-height: var(--lh-xs);
+    align-self: center;
+}
+
+.nav-previous {
+    grid-column: 1/2;
+}
+
+.nav-next {
+    grid-column: 2/3;
+    text-align: right;
+}
+
+.nav-links a {
+    text-decoration: none;
+}
+
+.nav-previous a::before {
+    @include mixins.svg-icon(--arrow-left, 18px, 18px);
+    & {
+        margin-left: -18px;
+        margin-bottom: -0.25rem;
+    }
+}
+
+.nav-next a::after {
+    @include mixins.svg-icon(--arrow-right, 18px, 18px);
+    & {
+        margin-right: -18px;
+        margin-bottom: -0.25rem;
+    }
+}
+
+/* pagination with function paginate_links() */
+
+.list-pagination-full {
+    @include mixins.article-width;
+    & {
+        background-color: var(--primary-lightest);
+        margin: 1rem auto;
+        padding: 1rem;
+    }
+}
+
+.list-pagination-area {
+    max-width: var(--text-max-width);
+    margin: 0 auto;
+    font-weight: var(--font-weight-sub);
+    font-size: var(--font-size-reduced);
+}
+
+.page-numbers,
+a.page-numbers {
+    background-color: var(--a-color);
+    color: var(--diap-color);
+    text-decoration: none;
+    border-bottom: 0;
+    padding: 0.2rem 0.6rem;
+    margin: 0 0 0 0;
+    &:hover {
+        background-color: var(--primary-darker);
+    }
+}
+
+.page-numbers.current {
+    background-color: var(--diap-color);
+    color: var(--a-color);
+    text-decoration: none;
+}

@@ -1,0 +1,147 @@
+/*!
+ Theme Name: Het AGK (FNGL 2022) 
+ Theme URI: https://fanagalo.nl
+ Author: Jaap Wiering - Fanagalo
+ Author URI: https://fanagalo.nl
+ Description: Custom theme for Het Amsterdams Gemengd Koor, based op fngl_s-core 0.78 
+ Version: 2.15
+ License: GNU General Public License v2 or later
+ Text Domain: agk-fngl-2022
+ */
+
+@forward "1-global-variables/colors";
+@forward "1-global-variables/svg";
+@forward "1-global-variables/typography";
+@forward "1-global-variables/width";
+
+@forward "2-mixins-functions/mixins";
+
+@forward "3-resets/normalize";
+@forward "3-resets/box-sizing";
+
+@forward "4-html-elements/html-body";
+@forward "4-html-elements/address";
+@forward "4-html-elements/blockquote";
+@forward "4-html-elements/forms-buttons";
+@forward "4-html-elements/headings";
+@forward "4-html-elements/hr";
+@forward "4-html-elements/links";
+@forward "4-html-elements/lists";
+@forward "4-html-elements/media";
+@forward "4-html-elements/inline-text";
+@forward "4-html-elements/paragraph";
+@forward "4-html-elements/pre-code";
+@forward "4-html-elements/tables";
+@forward "4-html-elements/obsolete";
+
+@forward "5-structure-objects/wireframes";
+@forward "5-structure-objects/sidebar";
+@forward "5-structure-objects/sidebar-fw";
+
+// 601. General components
+@forward "6-styled-components/601-general-components/article-classes";
+@forward "6-styled-components/601-general-components/gallery";
+@forward "6-styled-components/601-general-components/page-classes";
+@forward "6-styled-components/601-general-components/pagination";
+@forward "6-styled-components/601-general-components/wp-media";
+// 602. Widgets
+@forward "6-styled-components/602-widgets/widget-general";
+@forward "6-styled-components/602-widgets/widget-html-social-media";
+@forward "6-styled-components/602-widgets/widget-nav-menu";
+// 611. Page templates
+@forward "6-styled-components/611-page-templates/page"; // TODO should be before _front-page
+@forward "6-styled-components/611-page-templates/404";
+@forward "6-styled-components/611-page-templates/archive";
+@forward "6-styled-components/611-page-templates/front-page";
+@forward "6-styled-components/611-page-templates/index";
+@forward "6-styled-components/611-page-templates/leden-home";
+@forward "6-styled-components/611-page-templates/page-without-title";
+@forward "6-styled-components/611-page-templates/search";
+@forward "6-styled-components/611-page-templates/single";
+// 612. Section partials = Header, comments, sidebar, footer
+@forward "6-styled-components/612-section-parts/header";
+@forward "6-styled-components/612-section-parts/navigation";
+@forward "6-styled-components/612-section-parts/comments";
+@forward "6-styled-components/612-section-parts/footer";
+@forward "6-styled-components/612-section-parts/searchform";
+// 613. Content parts=files from template-parts folder
+@forward "6-styled-components/613-content-parts/content";
+@forward "6-styled-components/613-content-parts/content-archive";
+@forward "6-styled-components/613-content-parts/content-kennismaken-met.scss";
+@forward "6-styled-components/613-content-parts/content-none";
+@forward "6-styled-components/613-content-parts/content-page";
+@forward "6-styled-components/613-content-parts/content-search";
+
+// 621. Core Blocks - editor related styles.
+
+@forward "6-styled-components/621-core-blocks/gutenberg-variables";
+@forward "6-styled-components/621-core-blocks/wp-block-audio";
+@forward "6-styled-components/621-core-blocks/wp-block-button";
+@forward "6-styled-components/621-core-blocks/wp-block-calendar";
+@forward "6-styled-components/621-core-blocks/wp-block-categories";
+@forward "6-styled-components/621-core-blocks/wp-block-columns";
+@forward "6-styled-components/621-core-blocks/wp-block-cover";
+@forward "6-styled-components/621-core-blocks/wp-block-code";
+@forward "6-styled-components/621-core-blocks/wp-block-custom-logo";
+@forward "6-styled-components/621-core-blocks/wp-block-embed";
+@forward "6-styled-components/621-core-blocks/wp-block-file";
+@forward "6-styled-components/621-core-blocks/wp-block-gallery";
+@forward "6-styled-components/621-core-blocks/wp-block-group";
+@forward "6-styled-components/621-core-blocks/wp-block-image";
+@forward "6-styled-components/621-core-blocks/wp-block-latest-comments";
+@forward "6-styled-components/621-core-blocks/wp-block-latest-posts";
+@forward "6-styled-components/621-core-blocks/wp-block-media-text";
+@forward "6-styled-components/621-core-blocks/wp-block-more";
+// @forward "6-styled-components/621-core-blocks/wp-block-navigation"; // not yet implemented in WordPress 5.7
+@forward "6-styled-components/621-core-blocks/wp-block-preformatted";
+@forward "6-styled-components/621-core-blocks/wp-block-post-author";
+@forward "6-styled-components/621-core-blocks/wp-block-post-comments-form";
+@forward "6-styled-components/621-core-blocks/wp-block-post-featured-image";
+@forward "6-styled-components/621-core-blocks/wp-block-pullquote";
+@forward "6-styled-components/621-core-blocks/wp-block-query";
+@forward "6-styled-components/621-core-blocks/wp-block-quote";
+@forward "6-styled-components/621-core-blocks/wp-block-rss";
+@forward "6-styled-components/621-core-blocks/wp-block-search";
+@forward "6-styled-components/621-core-blocks/wp-block-separator";
+@forward "6-styled-components/621-core-blocks/wp-block-social-links";
+@forward "6-styled-components/621-core-blocks/wp-block-spacer";
+@forward "6-styled-components/621-core-blocks/wp-block-subhead"; // deprecated in Gutenberg 3.9.0
+@forward "6-styled-components/621-core-blocks/wp-block-table";
+@forward "6-styled-components/621-core-blocks/wp-block-tag-cloud";
+@forward "6-styled-components/621-core-blocks/wp-block-verse";
+@forward "6-styled-components/621-core-blocks/wp-block-video";
+@forward "6-styled-components/621-core-blocks/has-background";
+@forward "6-styled-components/621-core-blocks/has-color";
+@forward "6-styled-components/621-core-blocks/has-drop-cap";
+@forward "6-styled-components/621-core-blocks/has-font-size--is-text";
+@forward "6-styled-components/621-core-blocks/has-text-align";
+@forward "6-styled-components/621-core-blocks/has-text-color";
+@forward "6-styled-components/621-core-blocks/wp-block-text-columns"; // deprecated in Gutenberg 3.5.0
+@forward "6-styled-components/621-core-blocks/unclear-purpose";
+
+// 622. Custom blocks - editor related styles.
+@forward "6-styled-components/622-custom-blocks/caption";
+@forward "6-styled-components/622-custom-blocks/edit-link";
+@forward "6-styled-components/622-custom-blocks/headline-colors";
+
+// 640. Shortcodes
+@forward "6-styled-components/640-shortcodes/fngl_recent_posts";
+
+// 650. Vendor styles
+// @forward "6-styled-components/650-vendor/cookie-notice";
+@forward "6-styled-components/650-vendor/agk_custom_mvr";
+@forward "6-styled-components/650-vendor/agk_user_listing";
+@forward "6-styled-components/650-vendor/cookie-notice-hu-manity";
+// @forward "6-styled-components/650-vendor/events-calendar";
+@forward "6-styled-components/650-vendor/events-manager";
+@forward "6-styled-components/650-vendor/mailpoet";
+@forward "6-styled-components/650-vendor/nextgen";
+@forward "6-styled-components/650-vendor/ninja-forms";
+@forward "6-styled-components/650-vendor/thermometer";
+@forward "6-styled-components/650-vendor/wppcp";
+
+@forward "7-overrides/accessibility";
+@forward "7-overrides/align-left-center-right";
+@forward "7-overrides/align-wide-full";
+@forward "7-overrides/hide-empty-tags";
+@forward "7-overrides/hide-full-elements";

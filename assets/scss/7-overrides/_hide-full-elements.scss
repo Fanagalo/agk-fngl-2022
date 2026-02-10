@@ -1,0 +1,14 @@
+/* hides full width elements in smaller viewports */
+
+@use "../1-global-variables/width" as width;
+@use "../2-mixins-functions/mixins" as mixins;
+
+@media screen and (max-width: width.$mq-large) {
+    .header-area-full,
+    .nav-area-full,
+    .main-area-full,
+    .sidebar-3col-area-full,
+    .footer-area-full {
+        display: none;
+    }
+}

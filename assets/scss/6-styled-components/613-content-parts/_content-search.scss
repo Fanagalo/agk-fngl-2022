@@ -1,0 +1,17 @@
+@use "../../1-global-variables/width" as width;
+@use "../../2-mixins-functions/mixins" as mixins;
+
+.search-results {
+    .article-title {
+        font-size: var(--fs-xl);
+        line-height: var(--lh-l);
+    }
+}
+
+.article-summary {
+    @include mixins.article-width;
+    @include mixins.paragraph-styling;
+    p {
+        display: inline;
+    }
+}
