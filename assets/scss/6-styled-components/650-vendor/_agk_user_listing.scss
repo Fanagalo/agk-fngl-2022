@@ -1,0 +1,14 @@
+/**
+ * Custom CSS for plugin 
+ * AGK User Listing, plugin by Marco van Rijn, version 1.0
+ */
+
+@use "../../1-global-variables/width" as width;
+@use "../../2-mixins-functions/mixins" as mixins;
+
+#sul-searchform {
+    @include mixins.article-width;
+    label {
+        display: block;
+    }
+}

@@ -1,0 +1,25 @@
+@use "../../2-mixins-functions/mixins" as mixins;
+
+.error404 {
+    main {
+        margin: 0;
+        display: grid;
+    }
+    .page-content {
+        @include mixins.article-width;
+        & {
+            .search-form-top {
+                margin-bottom: 2rem;
+            }
+            .widget {
+                margin-bottom: 2rem;
+                * {
+                    color: var(--paragraph-color);
+                }
+                a {
+                    color: var(--a-color);
+                }
+            }
+        }
+    }
+}

@@ -78,23 +78,6 @@ if (!function_exists('agk_fngl_2022_setup')) :
 endif;
 add_action('after_setup_theme', 'agk_fngl_2022_setup');
 
-/**
- * JW 20200614: this function looks not useful, consider to delete
- * 
- * Set the content width in pixels, based on the theme's design and stylesheet.
- *
- * Priority 0 to make it available to lower priority callbacks.
- *
- * @global int $content_width
- */    /*
-function agk_fngl_2022_content_width() {
-	// This variable is intended to be overruled from themes.
-	// Open WPCS issue: {@link https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards/issues/1043}.
-	// phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound
-	$GLOBALS['content_width'] = apply_filters( 'agk_fngl_2022_content_width', 640 );
-}
-add_action( 'after_setup_theme', 'agk_fngl_2022_content_width', 0 );
-*/
 
 /**
  * Register widget area.
@@ -130,7 +113,6 @@ add_action('widgets_init', 'agk_fngl_2022_widgets_init');
  */
 function agk_fngl_2022_scripts()
 {
-
 	// Script for responsive mobile menu
 	// source: https://www.customyou.nl/responsive-menu-wordpress-clean-tutorial/
 	wp_enqueue_script('nav-menu.js', get_template_directory_uri() . '/js/nav-menu.js', array('jquery'), '20151111', true);
@@ -146,19 +128,16 @@ function agk_fngl_2022_scripts()
 add_action('wp_enqueue_scripts', 'agk_fngl_2022_scripts');
 
 /* Add functions from directory "inc" */
-require get_template_directory() . '/inc/comments-disable.php';             // Custom styling of the frontend and backend of the block editor 
-require get_template_directory() . '/inc/custom-block-styling.php';         // Custom styling of the frontend and backend of the block editor 
-require get_template_directory() . '/inc/custom-color-font-blocks.php';     // Custom colors and font sizes for block editor
-require get_template_directory() . '/inc/custom-header.php';                // Custom Header
-require get_template_directory() . '/inc/customizer.php';                   // Customizer
-// require get_template_directory() . '/inc/filter-search-cat.php';  			// Filters search results to posts in certain categories
-require get_template_directory() . '/inc/fngl-recent-posts-shortcode.php';  // Shortcode to display overview of pages, posts of CPT using a shortcode
-require get_template_directory() . '/inc/template-functions.php';           // Functions which enhance the theme by hooking into WordPress.
-require get_template_directory() . '/inc/template-tags.php';                // Custom template tags for this theme.
+require get_template_directory() . '/assets/inc/comments-disable.php';             	// Disable comments 
+require get_template_directory() . '/assets/inc/custom-block-styling.php';         	// Custom styling of the frontend and backend of the block editor 
+require get_template_directory() . '/assets/inc/custom-color-font-blocks.php';     	// Custom colors and font sizes for block editor
+require get_template_directory() . '/assets/inc/custom-header.php';                	// Custom Header
+require get_template_directory() . '/assets/inc/customizer.php';                   	// Customizer
+require get_template_directory() . '/assets/inc/search-redirect-loggedout.php';  	// Redirects logged out users to 404
+require get_template_directory() . '/assets/inc/fngl-recent-posts-shortcode.php';  	// Shortcode to display overview of pages, posts of CPT using a shortcode
+require get_template_directory() . '/assets/inc/template-functions.php';           	// Functions which enhance the theme by hooking into WordPress.
+require get_template_directory() . '/assets/inc/template-tags.php';                	// Custom template tags for this theme.
 
-// if (defined('JETPACK__VERSION')) {
-// 	require get_template_directory() . '/inc/jetpack.php';  // Load Jetpack compatibility file.
-// }
 
 /* Change excerpt length */
 

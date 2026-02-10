@@ -1,0 +1,8 @@
+@use "../../2-mixins-functions/mixins" as mixins;
+
+.page-header {
+}
+
+.page-title {
+    @include mixins.article-width;
+}
