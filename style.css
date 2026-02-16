@@ -5,7 +5,7 @@
  Author: Jaap Wiering - Fanagalo
  Author URI: https://fanagalo.nl
  Description: Custom theme for Het Amsterdams Gemengd Koor, based op fngl_s-core 0.78 
- Version: 2.15
+ Version: 2.16
  License: GNU General Public License v2 or later
  Text Domain: agk-fngl-2022
  */
@@ -37,30 +37,30 @@
   --mark-color: #fd0;
   --success-color: #0b0;
   /* primary tints - add white or black */
-  --primary-lightest: #($primary-lightest);
-  --primary-lighter: #($primary-lighter);
-  --primary-light: #($primary-light);
-  --primary-dark: #($primary-dark);
-  --primary-darker: #($primary-darker);
-  --primary-darkest: #($primary-darkest);
+  --primary-lightest: rgb(245.5, 240.5, 215.5);
+  --primary-lighter: #ece2b0;
+  --primary-light: rgb(226.5, 211.5, 136.5);
+  --primary-dark: rgb(162.75, 147.75, 72.75);
+  --primary-darker: rgb(108.5, 98.5, 48.5);
+  --primary-darkest: rgb(54.25, 49.25, 24.25);
   /* secondary tints - change lightness */
-  --secondary-lightest: #(secondary-lightest);
-  --secondary-lighter: #(secondary-lighter);
-  --secondary-light: #(secondary-light);
-  --secondary-middle-light: #(secondary-middle-light);
-  --secondary-middle: #(secondary-middle);
-  --secondary-middle-dark: #(secondary-middle-dark);
-  --secondary-dark: #(secondary-dark);
-  --secondary-darker: #(secondary-darker);
-  --secondary-darkest: #(secondary-darkest);
+  --secondary-lightest: hsl(0, 0%, 95%);
+  --secondary-lighter: hsl(0, 0%, 80%);
+  --secondary-light: hsl(0, 0%, 70%);
+  --secondary-middle-light: hsl(0, 0%, 60%);
+  --secondary-middle: hsl(0, 0%, 50%);
+  --secondary-middle-dark: hsl(0, 0%, 40%);
+  --secondary-dark: hsl(0, 0%, 30%);
+  --secondary-darker: hsl(0, 0%, 20%);
+  --secondary-darkest: hsl(0, 0%, 10%);
   /* greys */
-  --grey-lightest: #($grey-lightest);
-  --grey-lighter: #($grey-lighter);
-  --grey-light: #($grey-light);
-  --grey-middle: #($grey-middle);
-  --grey-dark: #($grey-dark);
-  --grey-darker: #($grey-darker);
-  --grey-darkest: #($grey-darkest);
+  --grey-lightest: rgb(242.25, 242.25, 242.25);
+  --grey-lighter: rgb(191.25, 191.25, 191.25);
+  --grey-light: rgb(159.375, 159.375, 159.375);
+  --grey-middle: hsl(0, 0%, 50%);
+  --grey-dark: rgb(95.625, 95.625, 95.625);
+  --grey-darker: rgb(63.75, 63.75, 63.75);
+  --grey-darkest: rgb(31.875, 31.875, 31.875);
   /* synonyms */
   --diap-color: var(--white);
 }
@@ -92,9 +92,9 @@ the typographical rhythm is 28px (1.75rem)
 */
 :root {
   /* font families */
-  --ff-sans: "Merriweather Sans", "Montserrat", Arial, sans;
-  --ff-serif: "Merriweather", Georgia, Times, serif;
-  --ff-mono: "Consolas", Courier, monospace;
+  --ff-sans: 'Merriweather Sans', 'Montserrat', Arial, sans;
+  --ff-serif: 'Merriweather', Georgia, Times, serif;
+  --ff-mono: 'Consolas', Courier, monospace;
   /* font size */
   --fs-xxs: 0.6rem;
   --fs-xs: 0.75rem;
@@ -5042,11 +5042,6 @@ p.has-background,
  */
 :root {
   /* background solid colors */
-  /* spot solid colors */
-  /* gradients */
-  /* .has-fanagalo-gradient-background {
-      background: linear-gradient(100deg, var(--fngl-dark-blue) 0%, var(--fngl-light-blue) 17%, var(--fngl-purple) 33%, var(--fngl-magenta) 50%, var(--fngl-dark-red) 67%, var(--fngl-red) 83%, var(--fngl-yellow) 100%);
-  } */
 }
 :root .has-agk-tekstkleur-background-color {
   background-color: var(--paragraph-color);
@@ -5076,6 +5071,9 @@ p.has-background,
 :root .has-agk-geel-achtergrond-background-color {
   background-color: var(--agk-geel-achtergrond);
 }
+:root {
+  /* spot solid colors */
+}
 :root .has-agk-tekstkleur-color {
   color: var(--paragraph-color);
 }
@@ -5099,6 +5097,12 @@ p.has-background,
 }
 :root .has-agk-geel-achtergrond-color {
   color: var(--agk-geel-achtergrond);
+}
+:root {
+  /* gradients */
+  /* .has-fanagalo-gradient-background {
+      background: linear-gradient(100deg, var(--fngl-dark-blue) 0%, var(--fngl-light-blue) 17%, var(--fngl-purple) 33%, var(--fngl-magenta) 50%, var(--fngl-dark-red) 67%, var(--fngl-red) 83%, var(--fngl-yellow) 100%);
+  } */
 }
 
 :root .has-link-color a {

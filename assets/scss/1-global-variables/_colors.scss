@@ -46,12 +46,12 @@
     $primary-dark: color.mix(black, $primary-color, 25%);
     $primary-darker: color.mix(black, $primary-color, 50%);
     $primary-darkest: color.mix(black, $primary-color, 75%);
-    --primary-lightest: #($primary-lightest);
-    --primary-lighter: #($primary-lighter);
-    --primary-light: #($primary-light);
-    --primary-dark: #($primary-dark);
-    --primary-darker: #($primary-darker);
-    --primary-darkest: #($primary-darkest);
+    --primary-lightest: #{$primary-lightest};
+    --primary-lighter: #{$primary-lighter};
+    --primary-light: #{$primary-light};
+    --primary-dark: #{$primary-dark};
+    --primary-darker: #{$primary-darker};
+    --primary-darkest: #{$primary-darkest};
 
     /* secondary tints - change lightness */
     $secondary-lightest: color.change($secondary-color, $lightness: 95%);
@@ -63,15 +63,15 @@
     $secondary-dark: color.change($secondary-color, $lightness: 30%);
     $secondary-darker: color.change($secondary-color, $lightness: 20%);
     $secondary-darkest: color.change($secondary-color, $lightness: 10%);
-    --secondary-lightest: #(secondary-lightest);
-    --secondary-lighter: #(secondary-lighter);
-    --secondary-light: #(secondary-light);
-    --secondary-middle-light: #(secondary-middle-light);
-    --secondary-middle: #(secondary-middle);
-    --secondary-middle-dark: #(secondary-middle-dark);
-    --secondary-dark: #(secondary-dark);
-    --secondary-darker: #(secondary-darker);
-    --secondary-darkest: #(secondary-darkest);
+    --secondary-lightest: #{$secondary-lightest};
+    --secondary-lighter: #{$secondary-lighter};
+    --secondary-light: #{$secondary-light};
+    --secondary-middle-light: #{$secondary-middle-light};
+    --secondary-middle: #{$secondary-middle};
+    --secondary-middle-dark: #{$secondary-middle-dark};
+    --secondary-dark: #{$secondary-dark};
+    --secondary-darker: #{$secondary-darker};
+    --secondary-darkest: #{$secondary-darkest};
 
     /* greys */
     $grey-lightest: color.mix(white, $grey-middle, 90%);
@@ -80,13 +80,13 @@
     $grey-dark: color.mix(black, $grey-middle, 25%);
     $grey-darker: color.mix(black, $grey-middle, 50%);
     $grey-darkest: color.mix(black, $grey-middle, 75%);
-    --grey-lightest: #($grey-lightest);
-    --grey-lighter: #($grey-lighter);
-    --grey-light: #($grey-light);
-    --grey-middle: #($grey-middle);
-    --grey-dark: #($grey-dark);
-    --grey-darker: #($grey-darker);
-    --grey-darkest: #($grey-darkest);
+    --grey-lightest: #{$grey-lightest};
+    --grey-lighter: #{$grey-lighter};
+    --grey-light: #{$grey-light};
+    --grey-middle: #{$grey-middle};
+    --grey-dark: #{$grey-dark};
+    --grey-darker: #{$grey-darker};
+    --grey-darkest: #{$grey-darkest};
 
     /* synonyms */
     --diap-color: var(--white);
