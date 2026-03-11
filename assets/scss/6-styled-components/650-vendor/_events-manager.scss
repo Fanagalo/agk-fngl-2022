@@ -31,6 +31,10 @@
     display: none;
 }
 
+.em.em-list {
+    grid-gap: 0;
+}
+
 .fngl-em-event-list {
     a {
         display: block;
@@ -42,6 +46,7 @@
         margin: 0 auto 2rem;
         padding: 1rem;
         background-color: var(--agk-bg);
+        width: 100%;
         max-width: var(--max-width-text);
         &:hover {
             background-color: var(--agk-geel-achtergrond);
